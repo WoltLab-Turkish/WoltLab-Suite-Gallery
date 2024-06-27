@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/5.4/language.xsd" languagecode="tr" languagename="Turkish" countrycode="tr">
+	<category name="gallery.acp.image">
+		<item name="gallery.acp.image.bulkProcessing"><![CDATA[Resimlerin {if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve Videoların Toplu işlenmesi{/if}]]></item>
+		<item name="gallery.acp.image.bulkProcessing.action"><![CDATA[Aksiyon]]></item>
+		<item name="gallery.acp.image.bulkProcessing.conditions"><![CDATA[Koşullar]]></item>
+		<item name="gallery.acp.image.bulkProcessing.delete"><![CDATA[Sil]]></item>
+		<item name="gallery.acp.image.bulkProcessing.disable"><![CDATA[Devre dışı bırak]]></item>
+		<item name="gallery.acp.image.bulkProcessing.disableComments"><![CDATA[Yorumları Devre Dışı Bırak]]></item>
+		<item name="gallery.acp.image.bulkProcessing.enable"><![CDATA[Etkinleştir]]></item>
+		<item name="gallery.acp.image.bulkProcessing.enableComments"><![CDATA[Yorumları Etkinleştir]]></item>
+		<item name="gallery.acp.image.bulkProcessing.restore"><![CDATA[Onar]]></item>
+		<item name="gallery.acp.image.bulkProcessing.setCategories"><![CDATA[Kategorileri Ayarla]]></item>
+		<item name="gallery.acp.image.bulkProcessing.setCategories.categories"><![CDATA[Kategoriler]]></item>
+		<item name="gallery.acp.image.bulkProcessing.setCategories.categories.description"><![CDATA[Mevcut kategoriler, seçilen kategorilerin üzerine yazılacaktır.]]></item>
+		<item name="gallery.acp.image.bulkProcessing.success"><![CDATA[Seçilen eylem yürütüldü ve {#$affectedObjectCount} resmini etkiledi {if $affectedObjectCount != 1} resmini etkiledi {/if}{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/video{if $affectedObjectCount != 1}s{/if}{/if}.{if $affectedObjectCount > 0}<br>Lütfen <a href="{link controller='RebuildData'}{/link}">“Bütünlüğünü Doğrulayın”</a>.{/if}]]></item>
+		<item name="gallery.acp.image.bulkProcessing.trash"><![CDATA[Çöp Kutusuna Taşı]]></item>
+	</category>
+	<category name="gallery.acp.menu">
+		<item name="gallery.acp.menu.link.gallery"><![CDATA[Galeri]]></item>
+		<item name="gallery.acp.menu.link.gallery.category.add"><![CDATA[Kategori Ekle]]></item>
+		<item name="gallery.acp.menu.link.gallery.category.list"><![CDATA[Kategoriler]]></item>
+		<item name="gallery.acp.menu.link.gallery.imageBulkProcessing"><![CDATA[Resimlerin Toplu İşlenmesi]]></item>
+	</category>
+	<category name="gallery.album">
+		<item name="gallery.album.accessLevel"><![CDATA[Albümü Görebilirsiniz]]></item>
+		<item name="gallery.album.accessLevel.description"><![CDATA[Bu albüme, resimlerine{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve videolarına{/if} sadece seçiili kullanıcılar erişebilmelidir.{if $album|isset} Değişikliklerin içerilen tüm resimlere {if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve videolara derhal uygulanacağını lütfen unutmayın{/if}.{/if}]]></item>
+		<item name="gallery.album.accessLevel.everyone"><![CDATA[Herkes]]></item>
+		<item name="gallery.album.accessLevel.following"><![CDATA[Takip Edilen Kullanıcılar]]></item>
+		<item name="gallery.album.accessLevel.info"><![CDATA[{if $album->hasRegisteredAccessLevel()}Sadece Kayıtlı Kullanıcılar Erişebilir{elseif $album->hasFollowingAccessLevel()}Yalnızca belirtilen kullanıcılar erişebilir{elseif $album->hasOwnerAccessLevel()}Özel Albüm{/if}]]></item>
+		<item name="gallery.album.accessLevel.owner"><![CDATA[Yalnızca Ben]]></item>
+		<item name="gallery.album.accessLevel.registered"><![CDATA[Kayıtlı Kullanıcılar]]></item>
+		<item name="gallery.album.add"><![CDATA[Albüm Oluştur]]></item>
+		<item name="gallery.album.albums"><![CDATA[Albümler]]></item>
+		<item name="gallery.album.button.add"><![CDATA[Yeni Albüm Oluştur]]></item>
+		<item name="gallery.album.delete"><![CDATA[Sil]]></item>
+		<item name="gallery.album.delete.confirmMessage"><![CDATA[Bu albümü gerçekten silmek istiyor musunuz?]]></item>
+		<item name="gallery.album.delete.success"><![CDATA[Albüm silindi.]]></item>
+		<item name="gallery.album.displayOptions"><![CDATA[Görüntüleme seçenekleri]]></item>
+		<item name="gallery.album.edit"><![CDATA[Albümü Düzenle]]></item>
+		<item name="gallery.album.info"><![CDATA[<li>Son güncelleme: {@$album->lastUpdateTime|time}</li>{if $album->images}<li>{#$album->images} Adet Resim{if $album->images != 1}{/if}</li>{/if}{if $album->videos}<li>{#$album->videos} video{if $album->videos != 1}s{/if}</li>{/if}{if $album->hasRegisteredAccessLevel()}<li>Sadece kayıtlı kullanıcılar erişebilir</li>{elseif $album->hasFollowingAccessLevel()}<li>Yalnızca belirtilen kullanıcılar erişebilir</li>{elseif $album->hasOwnerAccessLevel()}<li>Özel Albüm</li>{/if}]]></item>
+		<item name="gallery.album.lastUpdateTime"><![CDATA[Son Güncelleme]]></item>
+		<item name="gallery.album.map"><![CDATA[Konum]]></item>
+		<item name="gallery.album.moreAlbums"><![CDATA[Daha Fazla Albüm]]></item>
+		<item name="gallery.album.moreAlbums.images"><![CDATA[{if $albumItem->images}{#$albumItem->images} image{if $albumItem->Resimler != 1}{/if}{/if}{if $albumItem->videos}{if $albumItem->images} ve  {/if}{#$albumItem->videos} videolar{if $albumItem->videos != 1}s{/if}{/if}]]></item>
+		<item name="gallery.album.ownerImageModerationWarning"><![CDATA[Yüklediğiniz yeni resim{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve videolar{/if} onay gerektirdiğinden, bu özel albüme daha fazla resim {if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ya da video{/if} yükleyemezsiniz.]]></item>
+		<item name="gallery.album.search"><![CDATA[Albüm Arama]]></item>
+		<item name="gallery.album.search.results"><![CDATA[Arama Sonuçları]]></item>
+		<item name="gallery.album.showAll"><![CDATA[Tüm Albümleri Görüntüle]]></item>
+		<item name="gallery.album.sortBy"><![CDATA[Sıralama ölçütü]]></item>
+		<item name="gallery.album.sortField.images"><![CDATA[Resim Sayısı]]></item>
+		<item name="gallery.album.sortField.lastUpdateTime"><![CDATA[Son Güncelleme Zamanı]]></item>
+		<item name="gallery.album.sortField.time"><![CDATA[Oluşturma Zamanı]]></item>
+		<item name="gallery.album.sortField.videos"><![CDATA[Video Sayısı]]></item>
+		<item name="gallery.album.sortImages"><![CDATA[Resimleri Sırala]]></item>
+		<item name="gallery.album.sortImages.loadMoreImages"><![CDATA[Daha fazla resim]]></item>
+		<item name="gallery.album.sortImagesAutomatically"><![CDATA[Otomatik Sırala]]></item>
+		<item name="gallery.album.sortImagesAutomatically.info"><![CDATA[Albümdeki tüm resimler aşağıda seçilen ayarlara göre sıralanacaktır. Görüntülerin önceden manuel olarak sıralanmasının üzerine yazılacaktır.]]></item>
+		<item name="gallery.album.unreadAlbums"><![CDATA[Yeni Albümler]]></item>
+		<item name="gallery.album.userAlbums"><![CDATA[Albümün Sahibi: {$user->username}]]></item>
+	</category>
+	<category name="gallery.category">
+		<item name="gallery.category.delete.sure"><![CDATA[Bu kategoriyi gerçekten silmek istiyor musunuz? Bu kategorideki tüm alt kategoriler bu kategorinin üst kategorisine taşınacaktır. Resimler{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve videolar{/if} silinecektir.]]></item>
+	</category>
+	<category name="gallery.image">
+		<item name="gallery.image.add.button.nextImage"><![CDATA[Sonraki görüntü{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/video{/if}]]></item>
+		<item name="gallery.image.add.button.previousImage"><![CDATA[Önceki Resim{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/video{/if}]]></item>
+		<item name="gallery.image.albumID"><![CDATA[Albüm]]></item>
+		<item name="gallery.image.albumID.error.cannotAddToPrivateAlbumDueToModeration"><![CDATA[Yeni resimlerin moderatörler tarafından onaylanması gerektiğinden, yeni resimleri özel albümlere yüklemenize izin verilmez.]]></item>
+		<item name="gallery.image.albumID.overwrite.confirmMessage"><![CDATA[Yüklenen diğer tüm {if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} resimleri ve videolar{/if} bu albüme gerçekten atamak istiyor musunuz?]]></item>
+		<item name="gallery.image.albumImage"><![CDATA[{if $image->isImage()}Image{else}Video{/if} {#$albumImage} {if $albumImageCount|isset}{#$albumImageCount}{else}{#($image->getAlbum()->images + $image->getAlbum()->videos)}{/if}]]></item>
+		<item name="gallery.image.boxList.description.comments"><![CDATA[{#$image->comments} Yorum Yap{if $image->comments != 1}{/if}]]></item>
+		<item name="gallery.image.boxList.description.cumulativeLikes"><![CDATA[{include file='__topReaction' cachedReactions=$image->cachedReactions render='full'}]]></item>
+		<item name="gallery.image.boxList.description.favorites"><![CDATA[Favoriler: {#$image->favorites}]]></item>
+		<item name="gallery.image.boxList.description.views"><![CDATA[{#$image->views} Görünüm{if $image->views != 1}{/if}]]></item>
+		<item name="gallery.image.browser"><![CDATA[Galeri]]></item>
+		<item name="gallery.image.browser.image.list"><![CDATA[Tümü]]></item>
+		<item name="gallery.image.browser.image.search"><![CDATA[Ara]]></item>
+		<item name="gallery.image.browser.image.search.description"><![CDATA[Aramaya başlamak için en az 3 karakter yazın.]]></item>
+		<item name="gallery.image.browser.imagesAndVideos"><![CDATA[Resimler{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve Videolar{/if}]]></item>
+		<item name="gallery.image.browser.insert"><![CDATA[Mesaja yerleştir]]></item>
+		<item name="gallery.image.browser.insert.large"><![CDATA[Büyük ({$dimensions[width]} × {$dimensions[height]})]]></item>
+		<item name="gallery.image.browser.insert.medium"><![CDATA[Orta ({$dimensions[width]} × {$dimensions[height]})]]></item>
+		<item name="gallery.image.browser.insert.original"><![CDATA[Orjinal ({$dimensions[width]} × {$dimensions[height]})]]></item>
+		<item name="gallery.image.browser.insert.small"><![CDATA[Küçük ({$dimensions[width]} × {$dimensions[height]})]]></item>
+		<item name="gallery.image.browser.insert.tiny"><![CDATA[Minik ({$dimensions[width]} × {$dimensions[height]})]]></item>
+		<item name="gallery.image.browser.noAlbums"><![CDATA[Şu anda görünür resimler{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ya da videolar{/if} olan bir albüm yok.]]></item>
+		<item name="gallery.image.browser.noImages"><![CDATA[Şu anda görünür resim{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ya da videonuz{/if} yok.]]></item>
+		<item name="gallery.image.button.markAll"><![CDATA[Tümünü İşaretle]]></item>
+		<item name="gallery.image.button.overwrite"><![CDATA[Diğer tüm resimlere uygula{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve videolara uygula{/if}]]></item>
+		<item name="gallery.image.button.overwriteAll"><![CDATA[Tümüne uygula]]></item>
+		<item name="gallery.image.button.selectThumbnailArea"><![CDATA[Ön görüntü alanını seçin]]></item>
+		<item name="gallery.image.button.sort"><![CDATA[Sınıflandır]]></item>
+		<item name="gallery.image.button.upload"><![CDATA[Yükle]]></item>
+		<item name="gallery.image.camera"><![CDATA[Kamera]]></item>
+		<item name="gallery.image.categories"><![CDATA[Katergoriler]]></item>
+		<item name="gallery.image.categorizedImages"><![CDATA[Bu kategorideki Resimler{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve videolar{/if}  “{$category->getTitle()}”]]></item>
+		<item name="gallery.image.categoryIDs.error.tooMany"><![CDATA[Çok fazla kategori seçtiniz. Seçebileceğiniz maksimum kategori: {@GALLERY_IMAGE_MAX_CATEGORIES} {if GALLERY_IMAGE_MAX_CATEGORIES == 1}kategori{else}kategoriler{/if}.]]></item>
+		<item name="gallery.image.categoryIDs.overwrite.confirmMessage"><![CDATA[Tüm diğer yüklenen resimleri{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} br videoları{/if} seçilen kategorilere atamak istiyor musunuz?]]></item>
+		<item name="gallery.image.comment"><![CDATA[Galeri Yorumu]]></item>
+		<item name="gallery.image.comment.like.notification.message"><![CDATA[<strong>{$author}</strong> {if $image->isImage()}resim{else}video{/if} <strong>{$image->getTitle()}</strong> hakkındaki yorumunuza ({@$__wcf->getReactionHandler()->renderInlineList($reactions)}) tepki verdi.]]></item>
+		<item name="gallery.image.comment.like.notification.message.stacked"><![CDATA[{@'wcf.user.notification.stacked.authorList'|language} {if $image->isImage()}resim{else}video{/if} <strong>{$image->getTitle()}</strong> hakkındaki yorumunuza  ({@$__wcf->getReactionHandler()->renderInlineList($reactions)}) tepki verdi.]]></item>
+		<item name="gallery.image.comment.like.notification.title"><![CDATA[({if $image->isImage()}Resimdeki{else}Videodaki{/if}) yorumunuzu beğendi]]></item>
+		<item name="gallery.image.comment.like.notification.title.stacked"><![CDATA[({if $image->isImage()}resim4{else}video{/if}) yorumunuzu {#$count} sayıda kullanıcı beğendi ]]></item>
+		<item name="gallery.image.comment.notification.mail.html"><![CDATA[<p>{@$authorList} {if $image->isImage()}resmine{else}videona{/if} <a href="{$image->getLink()}#comment{@$commentID}">{$image->getTitle()}</a> yorum yaptı:</p>]]></item>
+		<item name="gallery.image.comment.notification.mail.plaintext"><![CDATA[{@$authorList} {if $image->isImage()}resmine{else}video{na/if} “{@$image->getTitle()}” [URL:{@$image->getLink()}#comment{@$commentID}]{if $count == 1 && !$guestTimesTriggered}yorum yapğtı:{else}.{/if}]]></item>
+		<item name="gallery.image.comment.notification.message"><![CDATA[{if $author->userID}<strong>{$author}</strong>{else}Bir misafir{/if} {if $image->isImage()}resiminize{else}videonuza{/if} <strong>{$image->getTitle()}</strong> yorum yaptı.]]></item>
+		<item name="gallery.image.comment.notification.message.stacked"><![CDATA[{@'wcf.user.notification.stacked.authorList'|language} {if $image->isImage()}resiminize{else}videonuza{/if} <strong>{$image->getTitle()}</strong> yorum yaptı.]]></item>
+		<item name="gallery.image.commentResponse"><![CDATA[Galeri Yorumunu Yanıtla]]></item>
+		<item name="gallery.image.commentResponse.like.notification.message"><![CDATA[<strong>{$author}</strong> {if $image->isImage()}resimdeki{else}videodaki{/if} <strong>{$image->getTitle()}</strong> bir yoruma verdiğiniz yanıta ({@$__wcf->getReactionHandler()->renderInlineList($reactions)}) tepki gösterdi.]]></item>
+		<item name="gallery.image.commentResponse.like.notification.message.stacked"><![CDATA[{@'wcf.user.notification.stacked.authorList'|language} {if $image->isImage()}resimdeki{else}videodaki{/if} <strong>{$image->getTitle()}</strong> bir yoruma verdiğiniz yanıta ({@$__wcf->getReactionHandler()->renderInlineList($reactions)}) tepki gösterdi.]]></item>
+		<item name="gallery.image.commentResponse.like.notification.title"><![CDATA[({if $image->isImage()}Resimdeki{else}Videodaki{/if}) Yoruma verdiğiniz cevaba tepki verdi]]></item>
+		<item name="gallery.image.commentResponse.like.notification.title.stacked"><![CDATA[({if $image->isImage()}Resim14{else}Video{/if}) bir yoruma verdiğiniz yanıta {#$count} sayıda kullanıcı tepki gösterdi ]]></item>
+		<item name="gallery.image.commentResponse.notification.mail.html"><![CDATA[<p>{@$authorList} {if $image->isImage()}resimdeki{else}videodaki{/if} <a href="{$image->getLink()}#comment{@$commentID}/response{@$responseID}">{$image->getTitle()}</a> hakkındaki yorumunuzu yanıtladı:</p>]]></item>
+		<item name="gallery.image.commentResponse.notification.mail.plaintext"><![CDATA[{@$authorList} {if $image->isImage()}resimdeki{else}videodaki{/if} “{@$image->getTitle()}” [URL:{@$image->getLink()}#comment{@$commentID}/response{@$responseID}]{if $count == 1 && !$guestTimesTriggered}hakkındaki yorumunuzu yanıtladı:{else}.{/if}]]></item>
+		<item name="gallery.image.commentResponse.notification.message"><![CDATA[{if $author->userID}<strong>{$author}</strong>{else}Bir misafir{/if} {if $image->isImage()}resim{else}video{/if} <strong>{$image->getTitle()}</strong> hakkındaki yorumunuza cevap verdi.]]></item>
+		<item name="gallery.image.commentResponse.notification.message.stacked"><![CDATA[{@'wcf.user.notification.stacked.authorList'|language} {if $image->isImage()}resim{else}video{/if} <strong>{$image->getTitle()}</strong> hakkındaki yorumunuza cevap verdi.]]></item>
+		<item name="gallery.image.commentResponseOwner.notification.mail.html"><![CDATA[<p>{@$authorList} {if $image->isImage()}resim{else}video{/if} hakkındaki yorumuna <strong>{$commentAuthor}</strong> tarafından <a href="{$image->getLink()}#comment{@$commentID}/response{@$responseID}">{$image->getTitle()}</a> yanıt verildi:</p>]]></item>
+		<item name="gallery.image.commentResponseOwner.notification.mail.plaintext"><![CDATA[{@$authorList} {if $image->isImage()}resim{else}video{/if} hakkındaki yorumuna {@$commentAuthor} tarafından “{@$image->getTitle()}” [URL:{@$image->getLink()}#comment{@$commentID}/response{@$responseID}]{if $count == 1 && !$guestTimesTriggered} yanıt verildi:{else}.{/if}]]></item>
+		<item name="gallery.image.commentResponseOwner.notification.message"><![CDATA[{if $author->userID}<strong>{$author}</strong>{else}Bir misafir{/if} {if $image->isImage()}resimdeki{else}videodaki{/if}  yapılan bir yoruma <strong>{$commentAuthor}</strong>  <strong>{$image->getTitle()}</strong> yanıt verildi.]]></item>
+		<item name="gallery.image.commentResponseOwner.notification.message.stacked"><![CDATA[<strong>{$author}</strong> tarafından {if $image->isImage()}resiminize{else}videonuza {/if} {@'wcf.user.notification.stacked.authorList'|language}  <strong>{$image->getTitle()}</strong> yapılan bir yoruma yanıt verildi.]]></item>
+		<item name="gallery.image.comments"><![CDATA[Yorumlar]]></item>
+		<item name="gallery.image.comments.count"><![CDATA[{#$image->comments} yorum{if $image->comments != 1}{/if}]]></item>
+		<item name="gallery.image.comments.label"><![CDATA[{#$comments} Yorum{if $comments != 1}{/if}]]></item>
+		<item name="gallery.image.condition.category"><![CDATA[Kategori]]></item>
+		<item name="gallery.image.condition.category.description"><![CDATA[Resimler{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Videolar{/if} seçilen kategorilerden herhangi birinde olması gerekir. “Ctrl / Shift” tuşu (Windows) veya “Command” (Mac OS) tuşu basılı tutularak ve istenen kategoriler tıklanarak birden fazla kategori seçilebilir.]]></item>
+		<item name="gallery.image.condition.comments"><![CDATA[Yorumlar]]></item>
+		<item name="gallery.image.condition.displayMode"><![CDATA[Görüntü Modu]]></item>
+		<item name="gallery.image.condition.displayMode.description"><![CDATA[Bu seçenek, yan çubuklara yerleştirilen kutular için geçerli değildir. “Hareketli resimler” seçeneği için,  {#1200}&times;{#900} pikselden büyük en az iki resim bulunmalıdır.]]></item>
+		<item name="gallery.image.condition.displayMode.grid"><![CDATA[Kılavuz]]></item>
+		<item name="gallery.image.condition.displayMode.masonry"><![CDATA[Duvarcılık]]></item>
+		<item name="gallery.image.condition.displayMode.motion"><![CDATA[Hareketli Resimler]]></item>
+		<item name="gallery.image.condition.state"><![CDATA[Durum]]></item>
+		<item name="gallery.image.condition.state.enableComments.error.conflict"><![CDATA[“Etkinleştirilen Yorumlar” ve “Devre Dışı Bırakılan Yorumlar” aynı anda seçilemez.]]></item>
+		<item name="gallery.image.condition.state.hasDisabledComments"><![CDATA[Devre Dışı Bırakılan Yorumlar]]></item>
+		<item name="gallery.image.condition.state.hasEnabledComments"><![CDATA[Etkin Yorumlar]]></item>
+		<item name="gallery.image.condition.state.isDeleted"><![CDATA[Çöp Kutusunda]]></item>
+		<item name="gallery.image.condition.state.isDeleted.error.conflict"><![CDATA[“Çöp Kutusunda” ve “Çöp Kutusunda Değil” aynı anda seçilemez.]]></item>
+		<item name="gallery.image.condition.state.isDisabled"><![CDATA[Onay Bekleniyor]]></item>
+		<item name="gallery.image.condition.state.isDisabled.error.conflict"><![CDATA[“Onay Bekliyor” ve “Onaylandı” aynı anda seçilemez.]]></item>
+		<item name="gallery.image.condition.state.isEnabled"><![CDATA[Onaylandı]]></item>
+		<item name="gallery.image.condition.state.isNotDeleted"><![CDATA[Çöp Kutusunda değil]]></item>
+		<item name="gallery.image.condition.timeFrame"><![CDATA[Zaman Periyodu]]></item>
+		<item name="gallery.image.condition.timeFrame.description"><![CDATA[Bu seçenek, kutuda gösterilen görüntülerin gün içindeki minimum ve maksimum yaşı ayarlar.]]></item>
+		<item name="gallery.image.condition.type"><![CDATA[Yazın]]></item>
+		<item name="gallery.image.condition.type.image"><![CDATA[Resimler]]></item>
+		<item name="gallery.image.condition.type.video"><![CDATA[Videolar]]></item>
+		<item name="gallery.image.condition.type.videoLink"><![CDATA[Video bağlantıları]]></item>
+		<item name="gallery.image.condition.uploadTime"><![CDATA[Yükleme tarihi]]></item>
+		<item name="gallery.image.condition.username"><![CDATA[Yükleyen]]></item>
+		<item name="gallery.image.condition.username.description"><![CDATA[Birden çok kullanıcının virgülle ayrılması gerekir.]]></item>
+		<item name="gallery.image.condition.views"><![CDATA[Görüntüleme]]></item>
+		<item name="gallery.image.conditions"><![CDATA[Resim{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Video{/if}]]></item>
+		<item name="gallery.image.coordinates"><![CDATA[Koordinatlar]]></item>
+		<item name="gallery.image.coordinates.description"><![CDATA[Bu resim{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/video{/if}için bir konum belirtebilirsiniz.]]></item>
+		<item name="gallery.image.coordinates.location"><![CDATA[Konum]]></item>
+		<item name="gallery.image.coordinates.location.description"><![CDATA[Konumu yazın ve önerilerden bir sonuç seçin.]]></item>
+		<item name="gallery.image.coordinates.overwrite.confirmMessage"><![CDATA[Tüm diğer yüklenen resimleri{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve videoları{/if} bu konuma atamak istiyor musunuz?]]></item>
+		<item name="gallery.image.coordinates.useCoordinates"><![CDATA[Konum belirtin]]></item>
+		<item name="gallery.image.coordinates.value"><![CDATA[{@$latDegrees}° {@$latMinutes}' {@$latSeconds}" {if $latitudeRef == 'S'}S{else}N{/if}, {@$longDegrees}° {@$longMinutes}' {@$longSeconds}" {if $longitudeRef == 'E'}E{else}W{/if}]]></item>
+		<item name="gallery.image.creationTime"><![CDATA[Oluşturma Tarihi]]></item>
+		<item name="gallery.image.delete"><![CDATA[Sil]]></item>
+		<item name="gallery.image.delete.confirmMessage"><![CDATA[Bu resmi{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/videoyu{/if} gerçekten silmek istiyor musunuz?]]></item>
+		<item name="gallery.image.delete.success"><![CDATA[Resim{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/video{/if} silindi.]]></item>
+		<item name="gallery.image.description"><![CDATA[Açıklama]]></item>
+		<item name="gallery.image.description.error.tooLong"><![CDATA[Açıklama çok uzun.]]></item>
+		<item name="gallery.image.description.overwrite.confirmMessage"><![CDATA[Bu açıklamayı dieğr tüm yüklenen resimlere{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve videolara{/if} atamak ister misiniz?]]></item>
+		<item name="gallery.image.disable"><![CDATA[Devre dışı]]></item>
+		<item name="gallery.image.edit"><![CDATA[Düzenle {if $image->isImage()}Image{else}Video{/if}]]></item>
+		<item name="gallery.image.edit.multiple"><![CDATA[Düzenle Resimleri{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Videoları{/if}]]></item>
+		<item name="gallery.image.enable"><![CDATA[Onayla]]></item>
+		<item name="gallery.image.enableComments"><![CDATA[Yorumları etkinleştir]]></item>
+		<item name="gallery.image.enableComments.description"><![CDATA[Kullanıcıların yorum yazmasına izin ver.]]></item>
+		<item name="gallery.image.enableComments.overwrite.confirmMessage"><![CDATA[“Yorumları Etkinleştir ayarının yüklenen tüm resimlere {if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve  videolara{/if} uygulanmasını istiyor musunuz?]]></item>
+		<item name="gallery.image.exif.aperture"><![CDATA[Apartür]]></item>
+		<item name="gallery.image.exif.exposureTime"><![CDATA[Poz süresi]]></item>
+		<item name="gallery.image.exif.flash"><![CDATA[Flaş]]></item>
+		<item name="gallery.image.exif.flash.0"><![CDATA[Flaş patlamadı]]></item>
+		<item name="gallery.image.exif.flash.1"><![CDATA[Flaş patladı.]]></item>
+		<item name="gallery.image.exif.flash.13"><![CDATA[Flaş patladı, zorunlu flaş modu, dönüş ışığı algılanmadı]]></item>
+		<item name="gallery.image.exif.flash.15"><![CDATA[Flaş patladı, zorunlu flaş modu, dönüş ışığı algılanmadı]]></item>
+		<item name="gallery.image.exif.flash.16"><![CDATA[Flaş patlamadı, zorunlu flaş modu]]></item>
+		<item name="gallery.image.exif.flash.17"><![CDATA[Flaş patladı, zorunlu flaş modu]]></item>
+		<item name="gallery.image.exif.flash.24"><![CDATA[Flaş patlamadı, otomatik mod]]></item>
+		<item name="gallery.image.exif.flash.25"><![CDATA[Flaş patladı, otomatik mod]]></item>
+		<item name="gallery.image.exif.flash.29"><![CDATA[Flaş patladı, otomatik mod, dönüş ışığı algılanmadı]]></item>
+		<item name="gallery.image.exif.flash.31"><![CDATA[Flaş patladı, otomatik mod, dönüş ışığı algılanmadı]]></item>
+		<item name="gallery.image.exif.flash.32"><![CDATA[Flaş işlevi yok]]></item>
+		<item name="gallery.image.exif.flash.5"><![CDATA[Elektronik flaş dönüş ışığı algılanmadı]]></item>
+		<item name="gallery.image.exif.flash.65"><![CDATA[Flaş patladı, kırmızı göz azaltma modu]]></item>
+		<item name="gallery.image.exif.flash.69"><![CDATA[Flaş patladı, kırmızı göz azaltma modu, dönüş ışığı algılanmadı]]></item>
+		<item name="gallery.image.exif.flash.7"><![CDATA[Elektronik flaş dönüş ışığı algılandı]]></item>
+		<item name="gallery.image.exif.flash.71"><![CDATA[Flaş patladı, kırmızı göz azaltma modu, dönüş ışığı algılandı]]></item>
+		<item name="gallery.image.exif.flash.73"><![CDATA[Flaş patladı, zorunlu flaş modu, kırmızı göz azaltma modu]]></item>
+		<item name="gallery.image.exif.flash.77"><![CDATA[Flaş patladı, zorunlu flaş modu, kırmızı göz azaltma modu, dönüş ışığı algılanmadı]]></item>
+		<item name="gallery.image.exif.flash.79"><![CDATA[Flaş patladı, zorunlu flaş modu, kırmızı göz azaltma modu, dönüş ışığı algılandı]]></item>
+		<item name="gallery.image.exif.flash.80"><![CDATA[Flaş patlamadı, kırmızı göz azaltma modu]]></item>
+		<item name="gallery.image.exif.flash.88"><![CDATA[Flaş patlamaz, otomatik flaş, kırmızı göz azaltma]]></item>
+		<item name="gallery.image.exif.flash.89"><![CDATA[Flaş patladı, otomatik mod, kırmızı göz azaltma modu]]></item>
+		<item name="gallery.image.exif.flash.9"><![CDATA[Flaş patladı, zorunlu flaş modu]]></item>
+		<item name="gallery.image.exif.flash.93"><![CDATA[Flaş patladı, otomatik mod, dönüş ışığı algılanmadı, kırmızı göz azaltma modu]]></item>
+		<item name="gallery.image.exif.flash.95"><![CDATA[Flaş patladı, otomatik mod, dönüş ışığı algılandı, kırmızı göz azaltma modu]]></item>
+		<item name="gallery.image.exif.focalLength"><![CDATA[Odak uzaklığı]]></item>
+		<item name="gallery.image.exif.iso"><![CDATA[ISO hızı]]></item>
+		<item name="gallery.image.favorite.add"><![CDATA[Favorilere ekle]]></item>
+		<item name="gallery.image.favorite.remove"><![CDATA[Favorilerden çıkar]]></item>
+		<item name="gallery.image.favorites"><![CDATA[Favoriler]]></item>
+		<item name="gallery.image.filename"><![CDATA[Dosya Adı]]></item>
+		<item name="gallery.image.filesize"><![CDATA[Dosya Boyutu]]></item>
+		<item name="gallery.image.image"><![CDATA[Resim]]></item>
+		<item name="gallery.image.images"><![CDATA[Resimler]]></item>
+		<item name="gallery.image.imagesAndVideos"><![CDATA[Resimler{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} Ve Videolar{/if}]]></item>
+		<item name="gallery.image.imagesInfoWindow"><![CDATA[Çoklu Resimler{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Videolar{/if}]]></item>
+		<item name="gallery.image.information"><![CDATA[Ayrıntılar]]></item>
+		<item name="gallery.image.isDeleted"><![CDATA[Silindi]]></item>
+		<item name="gallery.image.isDisabled"><![CDATA[Etkin değil]]></item>
+		<item name="gallery.image.like.notification.message"><![CDATA[<strong>{$author}</strong> {if $image->isImage()}resiminize{else}videonuza{/if} <strong>{$image->getTitle()}</strong> ({@$__wcf->getReactionHandler()->renderInlineList($reactions)}) tepki verdi.]]></item>
+		<item name="gallery.image.like.notification.message.stacked"><![CDATA[{@'wcf.user.notification.stacked.authorList'|language} {if $image->isImage()}resiminize{else}videonuza{/if} <strong>{$image->getTitle()}</strong> ({@$__wcf->getReactionHandler()->renderInlineList($reactions)}) tepki verdi.]]></item>
+		<item name="gallery.image.like.notification.title"><![CDATA[{if $image->isImage()}resiminize{else}videonuza{/if} tepki verdi]]></item>
+		<item name="gallery.image.like.notification.title.stacked"><![CDATA[{#$count} kullanıcılar {if $image->isImage()}resim{else}video{/if} tepki verdi]]></item>
+		<item name="gallery.image.list.displayMode.grid"><![CDATA[Tablo]]></item>
+		<item name="gallery.image.list.displayMode.masonry"><![CDATA[Duvar]]></item>
+		<item name="gallery.image.log.trash.summary"><![CDATA[{if $additionalData[isVideo]|empty}Görsel{else}Video{/if}, {if $userID}<a href="{link controller='User' id=$userID title=$username}{/link}" class="userLink" data-object-id="{@$userID}">{$username}</a>{else}{$username}{/if} tarafından silindi{if $additionalData[reason]} şu nedenle: {$additionalData[reason]}{/if} ({@$time|time}).]]></item>
+		<item name="gallery.image.map"><![CDATA[Konum]]></item>
+		<item name="gallery.image.markedUsers"><![CDATA[Etiketlenen Kullanıcılar]]></item>
+		<item name="gallery.image.markedUsers.description"><![CDATA[Bir kullanıcı adının üzerine gelindiğinde etiketler vurgulanır.]]></item>
+		<item name="gallery.image.marker"><![CDATA[Etiket]]></item>
+		<item name="gallery.image.marker.add"><![CDATA[Etiket ekle]]></item>
+		<item name="gallery.image.marker.delete.confirmMessage"><![CDATA[Bu etiketi gerçekten silmek istiyor musunuz?]]></item>
+		<item name="gallery.image.marker.description"><![CDATA[Bu konuma bir etiket eklemek için resme tıklayın.]]></item>
+		<item name="gallery.image.marker.edit"><![CDATA[Etiketi Düzenle]]></item>
+		<item name="gallery.image.marker.notification.mail.html"><![CDATA[<p><strong>{$author}</strong> <a href="{$image->getLink()}">{$image->getTitle()}</a> resimde seni işaretledi:</p>]]></item>
+		<item name="gallery.image.marker.notification.mail.plaintext"><![CDATA[{@$author} “{@$image->getTitle()}” resimde seni işaretledi [URL:{@$image->getLink()}]:]]></item>
+		<item name="gallery.image.marker.notification.message"><![CDATA[<strong>{$author}</strong> <strong>{$image->getTitle()}</strong>resimde seni işaretledi.]]></item>
+		<item name="gallery.image.marker.notification.title"><![CDATA[Etiketlendiniz]]></item>
+		<item name="gallery.image.marker.text"><![CDATA[Metin]]></item>
+		<item name="gallery.image.marker.text.description"><![CDATA[Bağlantı ve ifadeleri otomatik olarak algılar.]]></item>
+		<item name="gallery.image.marker.type"><![CDATA[Etiket Yazma]]></item>
+		<item name="gallery.image.marker.type.text"><![CDATA[Metin]]></item>
+		<item name="gallery.image.marker.type.user"><![CDATA[Kullanıcı]]></item>
+		<item name="gallery.image.marker.user"><![CDATA[Etiketlenen Kullanıcı]]></item>
+		<item name="gallery.image.marker.user.description"><![CDATA[Etiketlenen kullanıcı, bu resimde etiketlendiğini belirten bir bildirim alacaktır.]]></item>
+		<item name="gallery.image.mention.notification.mail.html"><![CDATA[<p><strong>{$author}</strong> {if $image->isImage()}resim{else}video{/if} <a href="{$image->getLink()}">{$image->getTitle()}</a> açıklamasında sizden bahsetti:</p>]]></item>
+		<item name="gallery.image.mention.notification.mail.plaintext"><![CDATA[{@$author} {if $image->isImage()}resim{else}video{/if} “{@$image->getTitle()}” açıklamasında sizden bahsetti [URL:{@$image->getLink()}]:]]></item>
+		<item name="gallery.image.mention.notification.message"><![CDATA[<strong>{$author}</strong> {if $image->isImage()}resim{else}video{/if} <strong>{$image->getTitle()}</strong> açıklamasında sizden bahsetti.]]></item>
+		<item name="gallery.image.mention.notification.title"><![CDATA[Etiketlendiniz]]></item>
+		<item name="gallery.image.moderation.info.image"><![CDATA[Yeni yüklenen resimler, bir moderatör tarafından onaylanana kadar erişilemez durumda kalacaktır. Onaylanmadıkça görselleri görüntüleyemez ve düzenleyemezsiniz.]]></item>
+		<item name="gallery.image.moderation.info.video"><![CDATA[Yeni yüklenen videolar, bir moderatör tarafından onaylanana kadar erişilemez durumda kalacaktır. Onaylanmadıkça videoları görüntüleyemez ve düzenleyemezsiniz.]]></item>
+		<item name="gallery.image.moderation.info.videoLink"><![CDATA[Yeni eklenen video bağlantılarına, bir moderatör tarafından onaylanana kadar erişilemez durumda kalacaktır. Onaylanana kadar eklenen video bağlantılarını görüntüleyemez veya düzenleyemezsiniz.]]></item>
+		<item name="gallery.image.moreImages"><![CDATA[Daha Fazla Resim]]></item>
+		<item name="gallery.image.moveToAlbum"><![CDATA[Resimleri{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Videoları{/if} Albüme taşıyın]]></item>
+		<item name="gallery.image.nextImage"><![CDATA[Sonraki {if $nextImage->isImage()}Resim{else}Video{/if}]]></item>
+		<item name="gallery.image.noImages"><![CDATA[Şuanda {if $category|isset} kategoride hiç bir{/if} resim{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ya da video{/if} yok.{if $hasActiveFilter} <a href="{link application='gallery' controller=$controllerName object=$controllerObject}{/link}">Uygulanan filtreleri sıfırlayın.</a>{/if}]]></item>
+		<item name="gallery.image.notification.mail.html"><![CDATA[<p><strong>{$author}</strong> {if $image->isVideoLink}eklendi{else}yüklendi{/if} {if $image->isImage()}resim{else}video{/if} <a href="{$image->getLink()}">{$image->getTitle()}</a>:</p>]]></item>
+		<item name="gallery.image.notification.mail.plaintext"><![CDATA[{@$author} {if $image->isVideoLink}eklendi{else}yüklendi{/if} {if $image->isImage()}resim{else}video{/if} “{@$image->getTitle()}” [URL:{@$image->getLink()}]:]]></item>
+		<item name="gallery.image.notification.message"><![CDATA[<strong>{$author}</strong> {if $image->isVideoLink}eklendi{else}yüklendi{/if} {if $image->isImage()}resim{else}video{/if} <strong>{$image->getTitle()}</strong>.]]></item>
+		<item name="gallery.image.notification.title"><![CDATA[Yeni {if $image->isImage()}Resim{else}Video{/if}]]></item>
+		<item name="gallery.image.overwriteData.confirmMessage"><![CDATA[Mevcut resmin{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/videonun{/if} ayrıntılarını diğer tüm resimlere{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve videolara {/if} uygulamak istiyor musunuz?]]></item>
+		<item name="gallery.image.pendingImages"><![CDATA[{if $pendingImageList|count > 1} {#$pendingImageList|count} adet kaydedilmemiş resim{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} yada video var {/if} {else}.{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} or video{/if} {/if}.]]></item>
+		<item name="gallery.image.pendingImages.delete"><![CDATA[Yüklenen fakat henüz kaydedilmemiş resimleri{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/videoları sil.{/if}]]></item>
+		<item name="gallery.image.pendingImages.delete.confirmMessage"><![CDATA[Gerçekten bekleyen resimleri {if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve  videoları silmek istiyor musunuz?{/if}?]]></item>
+		<item name="gallery.image.pendingImages.load"><![CDATA[Yüklenen fakat henüz kaydedilmemiş resimleri{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/videoları yükle{/if}]]></item>
+		<item name="gallery.image.previousImage"><![CDATA[Önceki {if $previousImage->isImage()}Resim{else}Video{/if}]]></item>
+		<item name="gallery.image.recentActivity.image"><![CDATA[{if $image->isVideoLink}Ekledi{else}Yükledi{/if} {if $image->isImage()}görseli{else}videoyu{/if} <a href="{$image->getLink()}" class="galleryImageLink" data-image-id="{@$image->imageID}">{$image->title}</a>.]]></item>
+		<item name="gallery.image.recentActivity.imageComment"><![CDATA[{if $image->isImage()}görsel{else}video{/if} üzerinde yorum yaptı <a href="{$comment->getLink()}" class="galleryImageLink" data-image-id="{@$image->imageID}">{$image->title}</a>.]]></item>
+		<item name="gallery.image.recentActivity.imageCommentResponse"><![CDATA[{user object=$commentAuthor} tarafından yapılan yorumuna yanıt verdi {if $image->isImage()}görsel{else}video{/if} üzerinde <a href="{$response->getLink()}" class="galleryImageLink" data-image-id="{@$image->imageID}">{$image->title}</a>.]]></item>
+		<item name="gallery.image.recentActivity.images"><![CDATA[{if $images}{#$images} resim{if $images > 1}{/if}{/if}{if $videos}{if $images} ve {/if}{#$videos} video{if $videos > 1}{/if}{/if} eklendi.]]></item>
+		<item name="gallery.image.recentActivity.likedImage"><![CDATA[{if $image->isImage()}Resim{else}video{/if} <span title="{$reactionType->getTitle()}" class="jsTooltip">{@$reactionType->renderIcon()}</span> ile tepki verdi <a href="{$image->getLink()}" class="galleryImageLink" data-image-id="{@$image->imageID}">{$image->title}</a>.]]></item>
+		<item name="gallery.image.restore"><![CDATA[Sıfırla]]></item>
+		<item name="gallery.image.rotate"><![CDATA[Resmi Döndür]]></item>
+		<item name="gallery.image.rotate.180"><![CDATA[ 180° Döndür]]></item>
+		<item name="gallery.image.rotate.270"><![CDATA[270° Döndür]]></item>
+		<item name="gallery.image.rotate.90"><![CDATA[90° Döndür]]></item>
+		<item name="gallery.image.rotate.confirmMessage"><![CDATA[Resmi gerçekten döndürmek istiyor musunuz? Seçilen önizleme alanı rotasyon sırasında sıfırlanacaktır.]]></item>
+		<item name="gallery.image.share.largeImage"><![CDATA[Büyük Hali]]></item>
+		<item name="gallery.image.share.smallImage"><![CDATA[Küçük Hali]]></item>
+		<item name="gallery.image.size"><![CDATA[Boyutları]]></item>
+		<item name="gallery.image.sortField.comments"><![CDATA[Yorum Sayısı]]></item>
+		<item name="gallery.image.sortField.creationTime"><![CDATA[Erstellungszeitpunkt]]></item>
+		<item name="gallery.image.sortField.cumulativeLikes"><![CDATA[Beğeniler]]></item>
+		<item name="gallery.image.sortField.favorites"><![CDATA[Favoriten]]></item>
+		<item name="gallery.image.sortField.random"><![CDATA[Rasgele]]></item>
+		<item name="gallery.image.sortField.showOrder"><![CDATA[Standardsortierung]]></item>
+		<item name="gallery.image.sortField.title"><![CDATA[Başlık]]></item>
+		<item name="gallery.image.sortField.uploadTime"><![CDATA[Yükleme Zamanı]]></item>
+		<item name="gallery.image.sortField.views"><![CDATA[Görüntüleme Sayısı]]></item>
+		<item name="gallery.image.tags.overwrite.confirmMessage"><![CDATA[Seçilen etiketleri tüm diğer Resimlere{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve videolara{/if} atamak istiyor musunuz?]]></item>
+		<item name="gallery.image.thumbnail.chooseSelection"><![CDATA[Seçimi Uygula]]></item>
+		<item name="gallery.image.title.overwrite.confirmMessage"><![CDATA[Başlığı tüm diğer yüklenen resimlere{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve videolara{/if} atamak istiyor musunuz?]]></item>
+		<item name="gallery.image.trash"><![CDATA[Çöp Kutusuna Taşı]]></item>
+		<item name="gallery.image.trash.confirmMessage"><![CDATA[Bu resmi {if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/videoyu{/if} gerçekten çöp kutusuna taımak istiyor musunuz?]]></item>
+		<item name="gallery.image.trash.reason"><![CDATA[Gerekçe (isteğe bağlı)]]></item>
+		<item name="gallery.image.unreadImages"><![CDATA[Yeni Resimler{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve Videolar{/if}]]></item>
+		<item name="gallery.image.upload"><![CDATA[Resim {if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve Video Yükle{/if}]]></item>
+		<item name="gallery.image.upload.abort"><![CDATA[İptal]]></item>
+		<item name="gallery.image.upload.albumLimitReached"><![CDATA[Albüm oluşturuldu. Maalesef sınırınıza ulaştınız ve daha fazla albüm oluşturamazsınız.]]></item>
+		<item name="gallery.image.upload.archive.success"><![CDATA[Arşiv yüklendi ve içerdiği dosyalar şu anda işleniyor.]]></item>
+		<item name="gallery.image.upload.currentImage"><![CDATA[Mevcut Resim]]></item>
+		<item name="gallery.image.upload.description"><![CDATA[Çok sayıda resim {if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ya da video{/if}, yüklediyseniz, her resmi ayrı olarak ön izlemesine tıklayarak düzenleyebilirsiniz.]]></item>
+		<item name="gallery.image.upload.error.containsNoImages"><![CDATA[Arşiv “{$file->getFilename()}” resim içermemektedir.]]></item>
+		<item name="gallery.image.upload.error.containsNoValidImages"><![CDATA[Arşiv “{$file->getFilename()}” geçerli resim içermemektedir.]]></item>
+		<item name="gallery.image.upload.error.fileExtension"><![CDATA[Dosyanın “{if $file|isset}{$file->getFilename()}{else}{$filename}{/if}” geçersiz bir uzantısı var.]]></item>
+		<item name="gallery.image.upload.error.invalidArchive"><![CDATA[Arşiv açılamadı “{$file->getFilename()}”.]]></item>
+		<item name="gallery.image.upload.error.markedImages"><![CDATA[Bir veya daha fazla alan yanlıştır, lütfen küçük resimlere tıklayarak vurgulanan görüntülerin giriş alanlarını kontrol edin.]]></item>
+		<item name="gallery.image.upload.error.maxHeight"><![CDATA[Resim “{if $file|isset}{$file->getFilename()}{else}{$filename}{/if}” çok uzun.]]></item>
+		<item name="gallery.image.upload.error.maxParallelFileUpload"><![CDATA[Paralel olarak {if GALLERY_MAX_PARALLEL_IMAGE_UPLOADS != 1}{#GALLERY_MAX_PARALLEL_IMAGE_UPLOADS} resimlerden{else}bir resimden{/if} fazlasını yükleyemezsiniz.]]></item>
+		<item name="gallery.image.upload.error.maxSize"><![CDATA[Resim “{if $file|isset}{$file->getFilename()}{else}{$filename}{/if}” çok büyük.]]></item>
+		<item name="gallery.image.upload.error.maxWidth"><![CDATA[Resim “{if $file|isset}{$file->getFilename()}{else}{$filename}{/if}” çok geniş.]]></item>
+		<item name="gallery.image.upload.error.minHeight"><![CDATA[Resim “{if $file|isset}{$file->getFilename()}{else}{$filename}{/if}” çok küçük.]]></item>
+		<item name="gallery.image.upload.error.minWidth"><![CDATA[Resim “{if $file|isset}{$file->getFilename()}{else}{$filename}{/if}” çok küçük.]]></item>
+		<item name="gallery.image.upload.error.noImage"><![CDATA[Yüklenen dosya “{$file->getFilename()}” resim değil.]]></item>
+		<item name="gallery.image.upload.error.quotaExceeded"><![CDATA[Depolama alanı limitinizi aştınız ve yeni resim yükleyemezsiniz. Boş alan kazanmak için mevcut resimleri silmeniz gerekmektedir.]]></item>
+		<item name="gallery.image.upload.error.tooManyImageSelected"><![CDATA[{#$imageCount} resim seçtiniz ancak {if $maximumImageCount}yalnızca {#$maximumImageCount} ek resim yüklemenize izin veriliyor{if $maximumImageCount > 1}{/if}{else} daha fazla resim yüklemenize izin verilmiyor{/if}.]]></item>
+		<item name="gallery.image.upload.error.tooManyImages"><![CDATA[Depolama alanı limitinizi aştınız ve yeni resim yükleyemezsiniz. Boş alan kazanmak için mevcut resimleri silmeniz gerekmektedir.]]></item>
+		<item name="gallery.image.upload.error.tooManyOfAll"><![CDATA[Maksimum resim{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve video{/if} limitinizi aştınız ve yeni resim {if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ya da video{/if} ekleyemezsiniz. Alan kazanmak için varolan resimleri{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ya da videoları{/if} silmeniz gerekmektedir.]]></item>
+		<item name="gallery.image.upload.error.tooManyUploads"><![CDATA[Maksimum resim{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve video{/if} limitinizi aştınız ve yeni resim {if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ya da video{/if}ekleyemezsiniz. Alan kazanmak için varolan resimleri{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ya da videoları{/if} silmeniz gerekmektedir.]]></item>
+		<item name="gallery.image.upload.error.totalQuotaExceeded"><![CDATA[Depolama alanı limitinizi aştınız ve yeni resim{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve video{/if} yükleyemezsiniz. Boş alan kazanmak için mevcut resimleri{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ya da videoları{/if} silmeniz gerekmektedir.]]></item>
+		<item name="gallery.image.upload.error.uploadFailed"><![CDATA[Aşağıdaki dosyanın yüklenmesi sırasında bilinmeyen bir hatayla karşılaşıldı: {if $file|isset}“{$file->getFilename()}”{else}a file{/if}.]]></item>
+		<item name="gallery.image.upload.error.uploadPhpLimit"><![CDATA[Dosya PHP'nin “max_upload_filesize” ve/veya “post_max_size” limitini aşıyor.]]></item>
+		<item name="gallery.image.upload.images"><![CDATA[Yüklenen Resimler{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve Videolar{/if}]]></item>
+		<item name="gallery.image.upload.info.containsInvalidImages"><![CDATA[Arşiv “{$file->getFilename()}” geçersiz resimler içeriyor:]]></item>
+		<item name="gallery.image.upload.info.thumbnailGeneration"><![CDATA[Küçük resimler şu anda oluşturuluyor, tamamlandıktan sonra otomatik olarak yeniden yönlendirileceksiniz.]]></item>
+		<item name="gallery.image.upload.restriction.archives"><![CDATA[Arşiv Yükleme]]></item>
+		<item name="gallery.image.upload.restriction.archives.description"><![CDATA[<b>Resimleri Zip Arşivi Kullanarak da Yükleyebilirsiniz.(Dikkat Rar Değil!!)</b>]]></item>
+		<item name="gallery.image.upload.restriction.count"><![CDATA[Yüklenen Resimler]]></item>
+		<item name="gallery.image.upload.restriction.count.value"><![CDATA[{#$userImageCount}/{#$__wcf->session->getPermission('user.gallery.maxImages')}]]></item>
+		<item name="gallery.image.upload.restriction.fileExtensions"><![CDATA[İzin Verilen Dosya Uzantıları]]></item>
+		<item name="gallery.image.upload.restriction.maximumFilesize"><![CDATA[Maksimum dosya büyüklüğü]]></item>
+		<item name="gallery.image.upload.restriction.maximumFilesize.value"><![CDATA[{@$__wcf->session->getPermission('user.gallery.maxSize')|filesize}]]></item>
+		<item name="gallery.image.upload.restriction.maximumImageSize"><![CDATA[Maksimum Resim Boyutu]]></item>
+		<item name="gallery.image.upload.restriction.maximumImageSize.description"><![CDATA[Yüklenen resim bu kısıtlamalardan daha büyükse, sistem mümkünse resmin boyutunu küçültmeye çalışır.]]></item>
+		<item name="gallery.image.upload.restriction.maximumImageSize.value"><![CDATA[{#$__wcf->session->getPermission('user.gallery.maxWidth')}&times;{#$__wcf->session->getPermission('user.gallery.maxHeight')} piksel]]></item>
+		<item name="gallery.image.upload.restriction.minimumImageSize"><![CDATA[Minimum Resim Boyutu]]></item>
+		<item name="gallery.image.upload.restriction.minimumImageSize.value"><![CDATA[{#GALLERY_IMAGE_MIN_WIDTH}&times;{#GALLERY_IMAGE_MIN_HEIGHT} piksel]]></item>
+		<item name="gallery.image.upload.restriction.quota"><![CDATA[Kullanılan Kota]]></item>
+		<item name="gallery.image.upload.restriction.quota.value"><![CDATA[{$usedImageQuota|filesize}/{$__wcf->session->getPermission('user.gallery.quota')|filesize}]]></item>
+		<item name="gallery.image.upload.restrictions.title"><![CDATA[Yeni resim {if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve video eklemeyle ilgili kısıtlamalar{/if}]]></item>
+		<item name="gallery.image.upload.save"><![CDATA[Tümünü Kaydet]]></item>
+		<item name="gallery.image.upload.showRestrictions"><![CDATA[Kısıtlamaları Göster]]></item>
+		<item name="gallery.image.uploadTime"><![CDATA[Yükleme Tarihi]]></item>
+		<item name="gallery.image.useFilenameAsTitle"><![CDATA[Dosya adını başlık olarak kullan]]></item>
+		<item name="gallery.image.userImages"><![CDATA[Görüntüleri {$user->username}]]></item>
+		<item name="gallery.image.viewFullSize"><![CDATA[Tam Boyutu Gör]]></item>
+		<item name="gallery.image.views"><![CDATA[Görünümler]]></item>
+		<item name="gallery.image.views.label"><![CDATA[{#$views} Görünüm{if $views != 1}{/if}]]></item>
+		<item name="gallery.image.watchedImages"><![CDATA[İzlenen Kategoriler]]></item>
+	</category>
+	<category name="gallery.index">
+		<item name="gallery.index.stats"><![CDATA[İstatistikler]]></item>
+		<item name="gallery.index.stats.detail"><![CDATA[<ul class="inlineList dotSeparated">
+<li>{plural value=$stats[authors] 1='1 Author' other='# Authors'}</li>
+<li>{plural value=$stats[albums] 1='1 Album' other='# Albums'}</li>
+<li>{plural value=$stats[images] 1='1 Image' other='# Images'}{if $stats[imagesPerDay]} ({plural value=$stats[imagesPerDay] 1='1 Image' other='# Images'} günlük){/if}</li>
+{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}
+	<li>{plural value=$stats[videos] 1='1 Video' other='# Videos'}{if $stats[videosPerDay]} ({plural value=$stats[videosPerDay] 1='1 Video' other='# Videos'} günlük){/if}</li>
+{/if}
+<li>{$stats[size]|filesize} Toplam Dosya Boyutu</li>
+<li>{plural value=$stats[comments] 1='1 Comment' other='# Comments'}</li>
+</ul>]]></item>
+	</category>
+	<category name="gallery.search">
+		<item name="gallery.search.findMarkedUser"><![CDATA[Etiketlenen Kullanıcılar]]></item>
+		<item name="gallery.search.findMarkedUser.description"><![CDATA[Belirtilen kullanıcıların tümü aranan resimlerde etiketlenmelidir.]]></item>
+		<item name="gallery.search.type"><![CDATA[Tip]]></item>
+		<item name="gallery.search.type.image"><![CDATA[Resimler]]></item>
+		<item name="gallery.search.type.video"><![CDATA[Videolar]]></item>
+	</category>
+	<category name="gallery.video">
+		<item name="gallery.video.albumID.error.cannotAddToPrivateAlbumDueToModeration"><![CDATA[Yeni videoların moderatörler tarafından onaylanması gerektiği için, özel albümlere yeni videolar ekleme izniniz yok.]]></item>
+		<item name="gallery.video.link.add"><![CDATA[Video Bağlantısı Ekle]]></item>
+		<item name="gallery.video.link.button.add"><![CDATA[Video bağlantısı ekle]]></item>
+		<item name="gallery.video.link.button.edit"><![CDATA[Videolink bearbeiten]]></item>
+		<item name="gallery.video.link.currentVideoLink"><![CDATA[Geçerli Video Bağlantısı]]></item>
+		<item name="gallery.video.link.edit"><![CDATA[Video Bağlantısını Düzenle]]></item>
+		<item name="gallery.video.link.error.inaccessible"><![CDATA[Girilen bağlantıya erişilemez.]]></item>
+		<item name="gallery.video.link.error.invalid"><![CDATA[Girilen bağlantı geçersiz.]]></item>
+		<item name="gallery.video.link.error.tooManyVideos"><![CDATA[Maksimum video bağlantı limitinizi aştınız ve yeni videolar yükleyemezsiniz. Boş alan kazanmak için mevcut video bağlantılarını silmeniz gerekir.]]></item>
+		<item name="gallery.video.link.error.unknownVideoProvider"><![CDATA[Girilen bağlantı desteklenmiyor.]]></item>
+		<item name="gallery.video.link.link"><![CDATA[Video Bağlantısı]]></item>
+		<item name="gallery.video.link.link.edit.info"><![CDATA[Yeni video bağlantısı yalnızca tüm değişiklikler kaydedildikten sonra kaydedilecektir. Video sağlayıcıdan bir küçük resim alınabiliyorsa, tüm değişiklikler kaydedildikten sonra kısa bir gecikmeyle de güncellenecektir.]]></item>
+		<item name="gallery.video.link.link.edit.overwriteData"><![CDATA[Mevcut video verilerinin üzerine yaz]]></item>
+		<item name="gallery.video.link.link.edit.overwriteData.description"><![CDATA[Seçilirse ve video verileri video sağlayıcıdan otomatik olarak alınabilirse, mevcut bilgilerin üzerine video sağlayıcıdan gelen veriler yazılacaktır.]]></item>
+		<item name="gallery.video.link.provider.com.woltlab.gallery.video.dailymotion"><![CDATA[Dailymotion]]></item>
+		<item name="gallery.video.link.provider.com.woltlab.gallery.video.vimeo"><![CDATA[Vimeo]]></item>
+		<item name="gallery.video.link.provider.com.woltlab.gallery.video.youTube"><![CDATA[YouTube]]></item>
+		<item name="gallery.video.link.restriction.count"><![CDATA[Bağlantılı Videolar]]></item>
+		<item name="gallery.video.link.restriction.count.value"><![CDATA[{#$userVideoLinkCount}/{#$__wcf->session->getPermission('user.gallery.maxVideoLinks')}]]></item>
+		<item name="gallery.video.link.restriction.providers"><![CDATA[Desteklenen Video Platformları]]></item>
+		<item name="gallery.video.thumbnail"><![CDATA[Küçük Resim]]></item>
+		<item name="gallery.video.thumbnail.delete.confirmMessage"><![CDATA[Bu küçük resmi gerçekten silmek istiyor musunuz?]]></item>
+		<item name="gallery.video.upload.currentVideo"><![CDATA[Geçerli Video]]></item>
+		<item name="gallery.video.upload.error.fileExtension"><![CDATA[Belirtilen dosyanın “{if $file|isset}{$file->getFilename()}{else}{$filename}{/if}” geçersiz bir uzantısı var.]]></item>
+		<item name="gallery.video.upload.error.maxSize"><![CDATA[Video “{if $file|isset}{$file->getFilename()}{else}{$filename}{/if}” çok büyük.]]></item>
+		<item name="gallery.video.upload.error.quotaExceeded"><![CDATA[Depolama alanı limitinizi aştınız ve yeni videolar yükleyemezsiniz. Boş alan kazanmak için mevcut videoları silmeniz gerekir.]]></item>
+		<item name="gallery.video.upload.error.tooManyVideos"><![CDATA[Maksimum video limitinizi aştınız ve yeni videolar yükleyemezsiniz. Boş alan kazanmak için mevcut videoları silmeniz gerekir.]]></item>
+		<item name="gallery.video.upload.error.uploadFailed"><![CDATA[Aaşğıdaki dosyanın yüklenmesi sırasında bilinmeyen bir hatayla karşılaşıldı “{$file->getFilename()}”.]]></item>
+		<item name="gallery.video.upload.restriction.count"><![CDATA[Yüklenen Videolar]]></item>
+		<item name="gallery.video.upload.restriction.count.value"><![CDATA[{#$userUploadedVideoCount}/{#$__wcf->session->getPermission('user.gallery.maxUploadedVideos')}]]></item>
+		<item name="gallery.video.upload.restriction.fileExtensions"><![CDATA[İzin Verilen Dosya Uzantıları]]></item>
+		<item name="gallery.video.upload.restriction.maximumFilesize"><![CDATA[Maksimum dosya boyutu]]></item>
+		<item name="gallery.video.upload.restriction.maximumFilesize.value"><![CDATA[{@$__wcf->session->getPermission('user.gallery.maxVideoSize')|filesize}]]></item>
+		<item name="gallery.video.upload.restriction.quota"><![CDATA[Kullanılan Kota]]></item>
+		<item name="gallery.video.upload.restriction.quota.value"><![CDATA[{$usedVideoQuota|filesize}/{$__wcf->session->getPermission('user.gallery.videoQuota')|filesize}]]></item>
+		<item name="gallery.video.userVideos"><![CDATA[Videoyu yükleyen: {$user->username}]]></item>
+		<item name="gallery.video.video"><![CDATA[Video]]></item>
+		<item name="gallery.video.videoLinks"><![CDATA[Video Bağlantıları]]></item>
+		<item name="gallery.video.videos"><![CDATA[Videolar]]></item>
+	</category>
+	<category name="wcf.acl.option">
+		<item name="wcf.acl.option.com.woltlab.gallery.category.canUseCategory"><![CDATA[Resimler {if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve videolar{/if} ekleyebilir]]></item>
+		<item name="wcf.acl.option.com.woltlab.gallery.category.canViewCategory"><![CDATA[Kategoriyi görebilir]]></item>
+	</category>
+	<category name="wcf.acp.box">
+		<item name="wcf.acp.box.boxController.com.woltlab.gallery.albumList"><![CDATA[Albümler]]></item>
+		<item name="wcf.acp.box.boxController.com.woltlab.gallery.categories"><![CDATA[Galeri Kategorileri]]></item>
+		<item name="wcf.acp.box.boxController.com.woltlab.gallery.commentList"><![CDATA[Resim{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve Video{/if} Yorumlar]]></item>
+		<item name="wcf.acp.box.boxController.com.woltlab.gallery.imageList"><![CDATA[Resimler{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve Videolar{/if}]]></item>
+		<item name="wcf.acp.box.boxController.com.woltlab.gallery.tagCloud"><![CDATA[Resim{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve Video{/if} Taglar]]></item>
+	</category>
+	<category name="wcf.acp.content">
+		<item name="wcf.acp.content.provider.com.woltlab.gallery.album"><![CDATA[Albümler]]></item>
+		<item name="wcf.acp.content.provider.com.woltlab.gallery.image"><![CDATA[Resimler]]></item>
+	</category>
+	<category name="wcf.acp.cronjob">
+		<item name="wcf.acp.cronjob.description.cronjob29"><![CDATA[Çöp Kutusundaki Resimleri boşaltır]]></item>
+		<item name="wcf.acp.cronjob.description.cronjob30"><![CDATA[Sahipsiz Resimleri siler]]></item>
+	</category>
+	<category name="wcf.acp.dataImport">
+		<item name="wcf.acp.dataImport.data.com.woltlab.gallery.album"><![CDATA[Albümler]]></item>
+		<item name="wcf.acp.dataImport.data.com.woltlab.gallery.category"><![CDATA[Galeri Kategorileri]]></item>
+		<item name="wcf.acp.dataImport.data.com.woltlab.gallery.image"><![CDATA[Resimler (Galeri)]]></item>
+		<item name="wcf.acp.dataImport.data.com.woltlab.gallery.image.comment"><![CDATA[Resim Yorumları]]></item>
+		<item name="wcf.acp.dataImport.data.com.woltlab.gallery.image.comment.response"><![CDATA[Resim yorumlarına cevaplar]]></item>
+		<item name="wcf.acp.dataImport.data.com.woltlab.gallery.image.like"><![CDATA[Resim beğenileri]]></item>
+		<item name="wcf.acp.dataImport.data.com.woltlab.gallery.image.marker"><![CDATA[Etiketler]]></item>
+	</category>
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.admin.gallery.canManageCategory"><![CDATA[Kategorileri yönetebilir]]></item>
+		<item name="wcf.acp.group.option.admin.gallery.canProcessImagesInBulk"><![CDATA[Resimleri{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve videoları{/if} toplu olarak işleyebilir]]></item>
+		<item name="wcf.acp.group.option.category.admin.gallery"><![CDATA[Galeri]]></item>
+		<item name="wcf.acp.group.option.category.mod.gallery"><![CDATA[Galeri]]></item>
+		<item name="wcf.acp.group.option.category.mod.gallery.album"><![CDATA[Albümler]]></item>
+		<item name="wcf.acp.group.option.category.mod.gallery.comment"><![CDATA[Yorumlar]]></item>
+		<item name="wcf.acp.group.option.category.mod.gallery.image"><![CDATA[Resimler{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve Videolar{/if}]]></item>
+		<item name="wcf.acp.group.option.category.user.gallery"><![CDATA[Galeri]]></item>
+		<item name="wcf.acp.group.option.category.user.gallery.album"><![CDATA[Albümler]]></item>
+		<item name="wcf.acp.group.option.category.user.gallery.comment"><![CDATA[Yorumlar]]></item>
+		<item name="wcf.acp.group.option.category.user.gallery.image"><![CDATA[Resimler]]></item>
+		<item name="wcf.acp.group.option.category.user.gallery.video"><![CDATA[Videolar]]></item>
+		<item name="wcf.acp.group.option.mod.gallery.canDeleteAlbum"><![CDATA[Albümleri silebilir]]></item>
+		<item name="wcf.acp.group.option.mod.gallery.canDeleteComment"><![CDATA[Yorumları silebilir]]></item>
+		<item name="wcf.acp.group.option.mod.gallery.canDeleteImage"><![CDATA[Görselleri ve videoları çöp kutusuna taşıyabilir]]></item>
+		<item name="wcf.acp.group.option.mod.gallery.canDeleteImageCompletely"><![CDATA[Görselleri ve videoları silebilir]]></item>
+		<item name="wcf.acp.group.option.mod.gallery.canEditAlbum"><![CDATA[Albümleri düzenleyebilir]]></item>
+		<item name="wcf.acp.group.option.mod.gallery.canEditComment"><![CDATA[Yorumları düzenleyebilir]]></item>
+		<item name="wcf.acp.group.option.mod.gallery.canEditImage"><![CDATA[Resimleri {if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve videoları{/if} düzenleyebilir]]></item>
+		<item name="wcf.acp.group.option.mod.gallery.canModerateComment"><![CDATA[Yorumları denetleyebilir]]></item>
+		<item name="wcf.acp.group.option.mod.gallery.canModerateImage"><![CDATA[Resimleri{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve videoları{/if} denetleyebilir]]></item>
+		<item name="wcf.acp.group.option.mod.gallery.canRestoreImage"><![CDATA[Resimleri{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve videoları{/if} önceki haline döndürebilir]]></item>
+		<item name="wcf.acp.group.option.mod.gallery.canViewDeletedImage"><![CDATA[Silinen resimleri{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve videoları{/if} görüntüleyebilir]]></item>
+		<item name="wcf.acp.group.option.user.gallery.allowedFileExtensions"><![CDATA[İzin Verilen Resim Uzantıları]]></item>
+		<item name="wcf.acp.group.option.user.gallery.allowedVideoFileExtensions"><![CDATA[İzin Verilen Video Uzantıları]]></item>
+		<item name="wcf.acp.group.option.user.gallery.canAddComment"><![CDATA[Yorum yazabilir]]></item>
+		<item name="wcf.acp.group.option.user.gallery.canAddCommentWithoutModeration"><![CDATA[Onay almadan yorum yazabilir]]></item>
+		<item name="wcf.acp.group.option.user.gallery.canAddImage"><![CDATA[Resim yükleyebilir]]></item>
+		<item name="wcf.acp.group.option.user.gallery.canAddImageWithoutModeration"><![CDATA[Onay almadan resim yükleyebilir]]></item>
+		<item name="wcf.acp.group.option.user.gallery.canDeleteComment"><![CDATA[Yorumları silebilie]]></item>
+		<item name="wcf.acp.group.option.user.gallery.canDeleteImage"><![CDATA[Resimleri çöp kutusuna gönderebilir]]></item>
+		<item name="wcf.acp.group.option.user.gallery.canDeleteVideo"><![CDATA[Videoları çöp kutusuna gönderebilir]]></item>
+		<item name="wcf.acp.group.option.user.gallery.canDisableCommentFunction"><![CDATA[Resimlerdeki yorumları devre dışı bırakabilir]]></item>
+		<item name="wcf.acp.group.option.user.gallery.canEditComment"><![CDATA[Yorumları düzenleyebilir]]></item>
+		<item name="wcf.acp.group.option.user.gallery.canEditImage"><![CDATA[Resimleri düzenleyebilir]]></item>
+		<item name="wcf.acp.group.option.user.gallery.canEditVideo"><![CDATA[Videoları düzenleyebilir]]></item>
+		<item name="wcf.acp.group.option.user.gallery.canLinkVideo"><![CDATA[Videolara bağlantı ekleyebilir]]></item>
+		<item name="wcf.acp.group.option.user.gallery.canLinkVideoWithoutModeration"><![CDATA[Onay almadan videolara bağlantı ekleyebilir]]></item>
+		<item name="wcf.acp.group.option.user.gallery.canRestrictAlbumAccess"><![CDATA[Albüm erişimini kısıtlayabilir]]></item>
+		<item name="wcf.acp.group.option.user.gallery.canSetTags"><![CDATA[Resimlere {if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve videolara {/if}etiket atayabilir]]></item>
+		<item name="wcf.acp.group.option.user.gallery.canUploadVideo"><![CDATA[Video yükleyebilir]]></item>
+		<item name="wcf.acp.group.option.user.gallery.canUploadVideoWithoutModeration"><![CDATA[Onay almadan video yükleyebilir]]></item>
+		<item name="wcf.acp.group.option.user.gallery.canViewImage"><![CDATA[Resimleri görüntüleyebilir]]></item>
+		<item name="wcf.acp.group.option.user.gallery.canViewVideo"><![CDATA[Videoları görüntüleyebilir]]></item>
+		<item name="wcf.acp.group.option.user.gallery.maxAlbums"><![CDATA[Maksümum Albüm]]></item>
+		<item name="wcf.acp.group.option.user.gallery.maxAlbums.description"><![CDATA[Kullanıcı başına maksimum izin verilen albüm sayısı.]]></item>
+		<item name="wcf.acp.group.option.user.gallery.maxDescriptionLength"><![CDATA[Maksimum Açıklama Uzunluğu]]></item>
+		<item name="wcf.acp.group.option.user.gallery.maxHeight"><![CDATA[Maksimum Resim Yüksekliği]]></item>
+		<item name="wcf.acp.group.option.user.gallery.maxHeight.description"><![CDATA[Yüklenen resimler için piksel cinsinden maksimum yükseklik. Sistem, bu yüksekliği aşan görüntüleri küçültmeye çalışacaktır.]]></item>
+		<item name="wcf.acp.group.option.user.gallery.maxImages"><![CDATA[Maksimum Resimler]]></item>
+		<item name="wcf.acp.group.option.user.gallery.maxImages.description"><![CDATA[Kullanıcı başına izin verilen maksimum resim sayısı.]]></item>
+		<item name="wcf.acp.group.option.user.gallery.maxSize"><![CDATA[Maksimum Resim Dosyası Boyutu]]></item>
+		<item name="wcf.acp.group.option.user.gallery.maxUploadedVideos"><![CDATA[MMaksimum Yüklenen Videolar]]></item>
+		<item name="wcf.acp.group.option.user.gallery.maxVideoLinks"><![CDATA[Maksimum Bağlantı Verilen Videolar]]></item>
+		<item name="wcf.acp.group.option.user.gallery.maxVideoSize"><![CDATA[Maksimum Eklenen Video Dosyası Boyutu]]></item>
+		<item name="wcf.acp.group.option.user.gallery.maxWidth"><![CDATA[Maksimum Resim Genişliği]]></item>
+		<item name="wcf.acp.group.option.user.gallery.maxWidth.description"><![CDATA[Yüklenen resimler için maksimum piksel genişliği, sistem bu genişliği aşan görüntüleri küçültmeye çalışır.]]></item>
+		<item name="wcf.acp.group.option.user.gallery.quota"><![CDATA[Maksimum Dosya Sistemi Kotası]]></item>
+		<item name="wcf.acp.group.option.user.gallery.quota.description"><![CDATA[Resimler için izin verilen maksimum disk alanı, küçük resimler bu kotaya dahil değildir.]]></item>
+		<item name="wcf.acp.group.option.user.gallery.videoQuota"><![CDATA[Maksimum Dosya Sistemi Kotası]]></item>
+		<item name="wcf.acp.group.option.user.gallery.videoQuota.description"><![CDATA[Videolar için izin verilen maksimum disk alanı. Video küçük resimleri bu kotadan çıkarılır.]]></item>
+	</category>
+	<category name="wcf.acp.modificationLog">
+		<item name="wcf.acp.modificationLog.com.woltlab.gallery.image.delete"><![CDATA[Resim silindi]]></item>
+		<item name="wcf.acp.modificationLog.com.woltlab.gallery.image.disable"><![CDATA[Resim devre dışı]]></item>
+		<item name="wcf.acp.modificationLog.com.woltlab.gallery.image.edit"><![CDATA[Resim düzenlendi]]></item>
+		<item name="wcf.acp.modificationLog.com.woltlab.gallery.image.enable"><![CDATA[Resim onaylandı]]></item>
+		<item name="wcf.acp.modificationLog.com.woltlab.gallery.image.restore"><![CDATA[Resim geri yüklendi]]></item>
+		<item name="wcf.acp.modificationLog.com.woltlab.gallery.image.trash"><![CDATA[Resim çöp kutusuna taşındı]]></item>
+	</category>
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.category.gallery"><![CDATA[Galeri]]></item>
+		<item name="wcf.acp.option.category.gallery.image"><![CDATA[Resimler]]></item>
+		<item name="wcf.acp.option.category.gallery.index"><![CDATA[Galeri Dizini]]></item>
+		<item name="wcf.acp.option.category.gallery.video"><![CDATA[Videolar]]></item>
+		<item name="wcf.acp.option.category.gallery.video.link.provider"><![CDATA[Video Platformları]]></item>
+		<item name="wcf.acp.option.category.gallery.video.link.provider.description"><![CDATA[Bir video bağlantısı oluştururken video küçük resimlerinin ve video verilerinin otomatik olarak getirilmesi için bazı video platformları için anahtarlar oluşturmanız gerekir.]]></item>
+		<item name="wcf.acp.option.category.gallery.watermark"><![CDATA[Filigran]]></item>
+		<item name="wcf.acp.option.category.gallery.watermark.image"><![CDATA[Resimler]]></item>
+		<item name="wcf.acp.option.category.gallery.watermark.text"><![CDATA[Metin]]></item>
+		<item name="wcf.acp.option.gallery_image_default_sort_field"><![CDATA[Sırala]]></item>
+		<item name="wcf.acp.option.gallery_image_default_sort_field.description"><![CDATA[Varsayılan görüntü sıralama seçeneğini seçin{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve videoların{/if}.]]></item>
+		<item name="wcf.acp.option.gallery_image_default_sort_order"><![CDATA[Sıralama Düzeni]]></item>
+		<item name="wcf.acp.option.gallery_image_default_sort_order.description"><![CDATA[Resimlerin varsayılan sıralama düzenini seçin{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve videoların{/if}.]]></item>
+		<item name="wcf.acp.option.gallery_image_empty_recycle_bin_cycle"><![CDATA[Çöp Kutusunu Boşalt]]></item>
+		<item name="wcf.acp.option.gallery_image_empty_recycle_bin_cycle.description"><![CDATA[Resimler, sonraki günlerde çöp kutusundan silinir. Devre dışı bırakmak için 0 kullanın.]]></item>
+		<item name="wcf.acp.option.gallery_image_list_display_mode"><![CDATA[Ekran modu]]></item>
+		<item name="wcf.acp.option.gallery_image_list_display_mode.description"><![CDATA[“Duvarcılık” seçildiğinde, resimlerin sıralama düzeni {if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve videolar{/if}, beklenen sıralama düzeninden sapabilir. ]]></item>
+		<item name="wcf.acp.option.gallery_image_max_categories"><![CDATA[Resim ve Video Başına Maksimum Kategoriler]]></item>
+		<item name="wcf.acp.option.gallery_image_min_height"><![CDATA[Minimum Resim Yüksekliği]]></item>
+		<item name="wcf.acp.option.gallery_image_min_height.description"><![CDATA[Yüklenen resimler için piksel cinsinden minimum yükseklik.]]></item>
+		<item name="wcf.acp.option.gallery_image_min_width"><![CDATA[Minimum Resim Genişliği]]></item>
+		<item name="wcf.acp.option.gallery_image_min_width.description"><![CDATA[Yüklenen resimler için piksel cinsinden minimum genişlik.]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_font_size"><![CDATA[Yazı Boyutu]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_font_size.description"><![CDATA[Punto cinsinden yazı tipi boyutu.]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_image"><![CDATA[Resim]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_image.removeFile"><![CDATA[Mevcut resimleri kaldır]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_original"><![CDATA[Orijinal resme filigran uygula]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_original.description"><![CDATA[Dikkat! Filigranın asıl resme uygulanması kalıcıdır ve daha sonra geri çevrilemez.]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_position"><![CDATA[Pozisyon]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_position.bottomCenter"><![CDATA[Alt orta]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_position.bottomLeft"><![CDATA[Sol alt]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_position.bottomRight"><![CDATA[Sağ alt]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_position.middleCenter"><![CDATA[Merkez]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_position.middleLeft"><![CDATA[Sol orta]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_position.middleRight"><![CDATA[Sağ orta]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_position.topCenter"><![CDATA[Üst orta]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_position.topLeft"><![CDATA[Sol üst]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_position.topRight"><![CDATA[Sağ üst]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_position_margin"><![CDATA[Marjin]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_position_margin.description"><![CDATA[Resimlerin kenarlarından piksel marjı.]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_text"><![CDATA[Metin]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_text.description"><![CDATA[“{literal}{$username}{/literal}” yazarın adıyla değiştirilecektir.]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_transparency"><![CDATA[Saydamlık]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_transparency.description"><![CDATA[Saydamlığı yüzde olarak ayarlayın. Devre dışı bırakmak için 0 kullanın.]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_type"><![CDATA[Filigran Tipi]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_type.image"><![CDATA[Resim Kullan]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_type.none"><![CDATA[Filigran Kullanma]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_type.text"><![CDATA[Metin Kullan]]></item>
+		<item name="wcf.acp.option.gallery_images_in_motion_duration"><![CDATA[Görüntü süresi “Hareketli görüntüler”]]></item>
+		<item name="wcf.acp.option.gallery_images_in_motion_duration.description"><![CDATA[Bir Resmin “Hareketli görüntüler” kutularında görüntülenme süresi.]]></item>
+		<item name="wcf.acp.option.gallery_images_per_page"><![CDATA[Sayfa başına Resim ve Videolar]]></item>
+		<item name="wcf.acp.option.gallery_index_enable_stats"><![CDATA[Galeri istatistiklerini görüntüle]]></item>
+		<item name="wcf.acp.option.gallery_max_parallel_image_uploads"><![CDATA[Maksimum Aynı Anda Yükleme Sayısı]]></item>
+		<item name="wcf.acp.option.gallery_max_parallel_image_uploads.description"><![CDATA[Kullanıcı başına maksimum aynı anda  yükleme sayısı.]]></item>
+		<item name="wcf.acp.option.gallery_message_sidebar_enable_user_images"><![CDATA[Yazarın resim sayısını göster]]></item>
+		<item name="wcf.acp.option.gallery_message_sidebar_enable_user_videos"><![CDATA[Yazarın video sayısını göster]]></item>
+		<item name="wcf.acp.option.gallery_user_profile_enable_latest_user_images"><![CDATA[Kullanıcının son resimlerini profil kenar çubuğunda gösterin]]></item>
+		<item name="wcf.acp.option.gallery_user_profile_enable_latest_user_videos"><![CDATA[Kullanıcının en yeni videolarını profil kenar çubuğunda gösterin]]></item>
+		<item name="wcf.acp.option.gallery_video_link_providers"><![CDATA[İzin Verilen Video Platformları]]></item>
+		<item name="wcf.acp.option.gallery_video_link_providers.description"><![CDATA[Kullanıcılar, seçilen platformlardaki videolara bağlantı verebilecektir.]]></item>
+		<item name="wcf.acp.option.gallery_video_links"><![CDATA[Video bağlantılarını etkinleştir]]></item>
+		<item name="wcf.acp.option.gallery_video_links.description"><![CDATA[Bu seçeneğin etkinleştirilmesine ek olarak, kullanıcıların video bağlantısı vermesini istediğiniz video platformlarını da etkinleştirmelisiniz.]]></item>
+		<item name="wcf.acp.option.gallery_video_upload"><![CDATA[video yüklemeyi Etkinleştir]]></item>
+		<item name="wcf.acp.option.gallery_vimeo_client_id"><![CDATA[Vimeo Müşteri Tanımlayıcısı]]></item>
+		<item name="wcf.acp.option.gallery_vimeo_client_id.description"><![CDATA[Vimeo sağlayıcıları, müşteri tanımlayıcısının ve istemci sırlarının nasıl alınacağına dair ayrıntılı bir açıklama <a href="https://developer.vimeo.com/api/authentication#overview" class="externalURL">burada</a>. Yalnızca bir <a href="https://developer.vimeo.com/apps" class="externalURL">uygulama</a> oluşturmanız gerektiğini ve gerekli bilgileri uygulamanın Kimlik Doğrulama sayfasında bulabileceğinizi unutmayın.<br>
+Gerçek istemci tanımlayıcısından önce ve sonra boşluk olmadığından emin olun!]]></item>
+		<item name="wcf.acp.option.gallery_vimeo_client_secrets"><![CDATA[Vimeo İstemci Sırları]]></item>
+		<item name="wcf.acp.option.gallery_vimeo_client_secrets.description"><![CDATA[Gerçek müşteri sırlarından önce ve sonra boşluk olmadığından emin olun!]]></item>
+		<item name="wcf.acp.option.gallery_youtube_api_key"><![CDATA[YouTube API Anahtarı]]></item>
+		<item name="wcf.acp.option.gallery_youtube_api_key.description"><![CDATA[Google burada bir API anahtarının nasıl alınacağına dair ayrıntılı bir açıklama <a href="https://developers.google.com/youtube/registering_an_application" class="externalURL">burada</a>. Kullanılan anahtarı Google API web sitesinde kısıtlarsanız, “IP adresleri (web sunucuları, cron işleri vb.)” Öğesini seçin ve web sitenizin web sunucusunun ip adreslerini girin.<br>
+Gerçek API anahtarından önce ve sonra boşluk olmadığından emin olun!]]></item>
+	</category>
+	<category name="wcf.acp.pip">
+		<item name="wcf.acp.pip.objectType.com.woltlab.gallery.box.imageList.condition.data.title"><![CDATA[Resim ve Video Liste Kutusu Durum Verileri]]></item>
+		<item name="wcf.acp.pip.objectType.com.woltlab.gallery.bulkProcessing.image.action.data.title"><![CDATA[Resim ve Video Toplu İşlem Verilerini İşleme]]></item>
+		<item name="wcf.acp.pip.objectType.com.woltlab.gallery.bulkProcessing.image.condition.data.title"><![CDATA[Görüntü ve Video Toplu İşleme durumu verileri]]></item>
+		<item name="wcf.acp.pip.objectType.definitionName.com.woltlab.gallery.box.imageList.condition.description"><![CDATA[Bu nesne türü tanımı, kutuda hangi görüntülerin ve videoların gösterileceğini belirlemek için görüntüleri ve videoları listeleyen kutular için mevcut koşulları / ayarları kaydetmek için kullanılır.]]></item>
+		<item name="wcf.acp.pip.objectType.definitionName.com.woltlab.gallery.bulkProcessing.image.action.description"><![CDATA[Bu nesne türü tanımı, görüntüleri ve videoları toplu olarak işlerken yürütülebilecek eylemleri kaydetmek için kullanılır.]]></item>
+		<item name="wcf.acp.pip.objectType.definitionName.com.woltlab.gallery.bulkProcessing.image.condition.description"><![CDATA[Bu nesne türü tanımı, toplu olarak işlenen görüntülerin ve videoların koşullarını kaydetmek için kullanılır.]]></item>
+		<item name="wcf.acp.pip.objectType.definitionName.com.woltlab.gallery.video.provider.description"><![CDATA[Bu nesne türü tanımı, video verilerinin ve küçük resimlerin getirilmesini işleyen video sağlayıcılarını kaydetmek için kullanılır.]]></item>
+	</category>
+	<category name="wcf.acp.rebuildData">
+		<item name="wcf.acp.rebuildData.gallery_system_worker_AlbumRebuildDataWorker"><![CDATA[Albümleri Yeniden Oluştur]]></item>
+		<item name="wcf.acp.rebuildData.gallery_system_worker_AlbumRebuildDataWorker.description"><![CDATA[Albüm sayaçlarını ve kapaklarını yeniden oluşturur.]]></item>
+		<item name="wcf.acp.rebuildData.gallery_system_worker_ImageRebuildDataWorker"><![CDATA[Galeri Resimlerini{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve Videolarını{/if} yeniden oluştur]]></item>
+		<item name="wcf.acp.rebuildData.gallery_system_worker_ImageRebuildDataWorker.description"><![CDATA[Galeri resimlerinin sayaçlarını {if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve videoları yeniden oluştur{/if}.]]></item>
+		<item name="wcf.acp.rebuildData.gallery_system_worker_ThumbnailRebuildDataWorker"><![CDATA[Galeri görüntülerinin sayaçlarını{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve  videoların küçük versiyonunu yeniden oluştur{/if}]]></item>
+		<item name="wcf.acp.rebuildData.gallery_system_worker_ThumbnailRebuildDataWorker.description"><![CDATA[Galeri resimlerinin{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve videoların küçük versiyonunu yeniden oluşturur{/if}.]]></item>
+	</category>
+	<category name="wcf.acp.sitemap">
+		<item name="wcf.acp.sitemap.objectType.com.woltlab.gallery.sitemap.object.album"><![CDATA[Albümler]]></item>
+		<item name="wcf.acp.sitemap.objectType.com.woltlab.gallery.sitemap.object.category"><![CDATA[Resim Kategorileri]]></item>
+		<item name="wcf.acp.sitemap.objectType.com.woltlab.gallery.sitemap.object.image"><![CDATA[Galeriler: Resimler{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve Videolar{/if}]]></item>
+	</category>
+	<category name="wcf.acp.stat">
+		<item name="wcf.acp.stat.category.com.woltlab.gallery"><![CDATA[WoltLab Suite Galerisi]]></item>
+		<item name="wcf.acp.stat.com.woltlab.gallery.image"><![CDATA[Resimler]]></item>
+		<item name="wcf.acp.stat.com.woltlab.gallery.image.diskUsage"><![CDATA[Toplam Resim Dosyası Boyutu (MB)]]></item>
+		<item name="wcf.acp.stat.com.woltlab.gallery.imageComment"><![CDATA[Resim Yorumları]]></item>
+		<item name="wcf.acp.stat.com.woltlab.gallery.video"><![CDATA[Videolar]]></item>
+		<item name="wcf.acp.stat.com.woltlab.gallery.video.diskUsage"><![CDATA[Toplam Video Dosyası Boyutu (MB)]]></item>
+		<item name="wcf.acp.stat.com.woltlab.gallery.videoLink"><![CDATA[Video Bağlantıları]]></item>
+	</category>
+	<category name="wcf.clipboard">
+		<item name="wcf.clipboard.item.com.woltlab.gallery.image.delete"><![CDATA[Sil ({#$count})]]></item>
+		<item name="wcf.clipboard.item.com.woltlab.gallery.image.delete.confirmMessage"><![CDATA[Etiketli resmi{if $count != 1}s{/if}{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/videoyu{if $count != 1}s{/if}{/if} gerçekten silmek istiyor musunuz?]]></item>
+		<item name="wcf.clipboard.item.com.woltlab.gallery.image.disable"><![CDATA[Devre Dışı Bırak ({#$count})]]></item>
+		<item name="wcf.clipboard.item.com.woltlab.gallery.image.edit"><![CDATA[Düzenle ({#$count})]]></item>
+		<item name="wcf.clipboard.item.com.woltlab.gallery.image.enable"><![CDATA[Onayla ({#$count})]]></item>
+		<item name="wcf.clipboard.item.com.woltlab.gallery.image.moveToAlbum"><![CDATA[Albüme Taşı ({#$count})]]></item>
+		<item name="wcf.clipboard.item.com.woltlab.gallery.image.restore"><![CDATA[Eski Haline Getir ({#$count})]]></item>
+		<item name="wcf.clipboard.item.com.woltlab.gallery.image.trash"><![CDATA[Çöp Kutusuna Taşı ({#$count})]]></item>
+		<item name="wcf.clipboard.item.com.woltlab.gallery.image.trash.confirmMessage"><![CDATA[Etiketli resmi{if $count != 1}s{/if}{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/videoyu{if $count != 1}s{/if}{/if} gerçekten çöp kutusuna taşımak istiyor musunuz?]]></item>
+		<item name="wcf.clipboard.label.com.woltlab.gallery.image.marked"><![CDATA[{if $count == 1}Bir Resim{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Video{/if}{else}{#$count} Resim{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Video{/if}{/if}]]></item>
+	</category>
+	<category name="wcf.like">
+    <item name="wcf.like.objectType.com.woltlab.gallery.likeableImage"><![CDATA[Görsel{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Video{/if}]]></item>
+    <item name="wcf.like.title.com.woltlab.gallery.imageComment"><![CDATA[{if $commentAuthor}{user object=$commentAuthor}{else}bir misafir{/if} tarafından yapılan yoruma {@$reaction->render()} ile tepki verdi {if $image->isImage()}görsel{else}video{/if} üzerinde {anchor link=$comment content=$image}.]]></item>
+    <item name="wcf.like.title.com.woltlab.gallery.imageComment.response"><![CDATA[{if $responseAuthor}{user object=$responseAuthor}{else}bir misafir{/if} tarafından yapılan yanıta {@$reaction->render()} ile tepki verdi {if $commentAuthor}{user object=$commentAuthor}{else}bir misafir{/if} tarafından yapılan yorum üzerinde {if $image->isImage()}görsel{else}video{/if} {anchor link=$response content=$image}.]]></item>
+    <item name="wcf.like.title.com.woltlab.gallery.likeableImage"><![CDATA[{if $image->isImage()}görsel{else}video{/if} {anchor object=$image} üzerinde {@$reaction->render()} ile tepki verdi.]]></item>
+	</category>
+	<category name="wcf.menu">
+		<item name="wcf.menu.item.com.woltlab.gallery.AlbumList"><![CDATA[Albümler]]></item>
+		<item name="wcf.menu.item.com.woltlab.gallery.Gallery"><![CDATA[Galeri]]></item>
+		<item name="wcf.menu.item.com.woltlab.gallery.Map"><![CDATA[Harita]]></item>
+		<item name="wcf.menu.item.com.woltlab.gallery.MyAlbumList"><![CDATA[Albümlerim]]></item>
+		<item name="wcf.menu.item.com.woltlab.gallery.MyFavoriteList"><![CDATA[Favorilerim]]></item>
+		<item name="wcf.menu.item.com.woltlab.gallery.MyImageList"><![CDATA[Resimlerim]]></item>
+		<item name="wcf.menu.item.com.woltlab.gallery.MyVideoList"><![CDATA[Videolarım]]></item>
+		<item name="wcf.menu.item.com.woltlab.gallery.UnreadAlbumList"><![CDATA[Yeni Albümler]]></item>
+		<item name="wcf.menu.item.com.woltlab.gallery.UnreadImageList"><![CDATA[Yeni öğeler]]></item>
+		<item name="wcf.menu.item.com.woltlab.gallery.WatchedImageList"><![CDATA[İzlenen Görüntüler]]></item>
+	</category>
+	<category name="wcf.moderation">
+		<item name="wcf.moderation.deletedContent.com.woltlab.gallery.image"><![CDATA[Silinen resimler{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve Videolar{/if}]]></item>
+		<item name="wcf.moderation.deletedContent.objectType.com.woltlab.gallery.image"><![CDATA[Resimler{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve Videolar{/if}]]></item>
+		<item name="wcf.moderation.type.com.woltlab.gallery.image"><![CDATA[Resim{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Video{/if}]]></item>
+	</category>
+	<category name="wcf.page">
+		<item name="wcf.page.category.com.woltlab.gallery"><![CDATA[WoltLab Suite Galerisi]]></item>
+		<item name="wcf.page.com.woltlab.gallery.AlbumListPage"><![CDATA[Albümler]]></item>
+		<item name="wcf.page.com.woltlab.gallery.AlbumPage"><![CDATA[Albüm]]></item>
+		<item name="wcf.page.com.woltlab.gallery.ImageAddPage"><![CDATA[Resimleri{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Videoları{/if} yükleyin]]></item>
+		<item name="wcf.page.com.woltlab.gallery.ImageEditPage"><![CDATA[Resimleri{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Videoları{/if} düzenleyin]]></item>
+		<item name="wcf.page.com.woltlab.gallery.ImageListPage"><![CDATA[Resimler]]></item>
+		<item name="wcf.page.com.woltlab.gallery.ImagePage"><![CDATA[Resimler{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Videolar{/if}]]></item>
+		<item name="wcf.page.com.woltlab.gallery.MapPage"><![CDATA[Harita]]></item>
+		<item name="wcf.page.com.woltlab.gallery.UnreadImageListPage"><![CDATA[Yeni Resimler{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve Videolar{/if}]]></item>
+		<item name="wcf.page.com.woltlab.gallery.WatchedImageListPage"><![CDATA[İzlenen Kategoriler]]></item>
+		<item name="wcf.page.onlineLocation.com.woltlab.gallery.Album"><![CDATA[Albüm <a href="{$album->getLink()}">{$album->getTitle()}</a>]]></item>
+		<item name="wcf.page.onlineLocation.com.woltlab.gallery.CategoryImageList"><![CDATA[Galeri Kategorisi <a href="{$category->getLink()}">{$category->getTitle()}</a>]]></item>
+		<item name="wcf.page.onlineLocation.com.woltlab.gallery.Image"><![CDATA[{if $image->isImage()}Resim{else}Video{/if} <a href="{$image->getLink()}">{$image->getTitle()}</a>]]></item>
+		<item name="wcf.page.onlineLocation.com.woltlab.gallery.ImageEdit"><![CDATA[Editing {if $image->isImage()}Resim{else}Video{/if} <a href="{$image->getLink()}">{$image->getTitle()}</a>]]></item>
+		<item name="wcf.page.onlineLocation.com.woltlab.gallery.UserAlbumList"><![CDATA[<a href="{link controller='UserAlbumList' application='gallery' object=$user}{/link}">Albümlerim {$user->username}</a>]]></item>
+		<item name="wcf.page.onlineLocation.com.woltlab.gallery.UserImageList"><![CDATA[<a href="{link controller='UserImageList' application='gallery' object=$user}{/link}">Resimlerim {$user->username}</a>]]></item>
+		<item name="wcf.page.onlineLocation.com.woltlab.gallery.UserVideoList"><![CDATA[<a href="{link controller='UserVideoList' application='gallery' object=$user}{/link}">Videolarım {$user->username}</a>]]></item>
+	</category>
+	<category name="wcf.search">
+		<item name="wcf.search.object.com.woltlab.gallery.image"><![CDATA[{if $message|isset && ($message->isVideo || $message->isVideoLink)}Video{else}Resimler{/if}]]></item>
+		<item name="wcf.search.type.com.woltlab.gallery.image"><![CDATA[Galeri]]></item>
+	</category>
+	<category name="wcf.tagging">
+		<item name="wcf.tagging.combinedTaggedObjects.com.woltlab.gallery.image"><![CDATA[Bilder{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} und Videos{/if} mit den Tags]]></item>
+		<item name="wcf.tagging.objectType.com.woltlab.gallery.image"><![CDATA[Resimler{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve Videlar{/if}]]></item>
+		<item name="wcf.tagging.taggedObjects.com.woltlab.gallery.image"><![CDATA[Resimler{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve Videolar{/if} Tagged with “{$tag->name}”]]></item>
+	</category>
+	<category name="wcf.user">
+		<item name="wcf.user.activityPoint.objectType.com.woltlab.gallery.activityPointEvent.image"><![CDATA[Resimler]]></item>
+		<item name="wcf.user.activityPoint.objectType.com.woltlab.gallery.activityPointEvent.video"><![CDATA[Videolar]]></item>
+		<item name="wcf.user.activityPoint.objectType.com.woltlab.gallery.activityPointEvent.videoLink"><![CDATA[Video Bağlantıları]]></item>
+		<item name="wcf.user.boxList.description.galleryImages"><![CDATA[{#$boxUser->galleryImages} Resim{if $boxUser->galleryImages != 1}s{/if}]]></item>
+		<item name="wcf.user.boxList.description.galleryVideos"><![CDATA[{#$boxUser->galleryVideos} Video{if $boxUser->galleryVideos != 1}s{/if}]]></item>
+		<item name="wcf.user.sortField.galleryImages"><![CDATA[Resimler]]></item>
+		<item name="wcf.user.sortField.galleryVideos"><![CDATA[Videolar]]></item>
+	</category>
+	<category name="wcf.user.condition">
+		<item name="wcf.user.condition.galleryImages"><![CDATA[Resimler]]></item>
+		<item name="wcf.user.condition.galleryVideos"><![CDATA[Videolar]]></item>
+	</category>
+	<category name="wcf.user.notification">
+		<item name="wcf.user.notification.com.woltlab.gallery"><![CDATA[Galeri]]></item>
+		<item name="wcf.user.notification.com.woltlab.gallery.image.image"><![CDATA[Yeni resimler{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ya da videolar{/if} kategoriler halinde izlendiğinde beni uyar]]></item>
+		<item name="wcf.user.notification.com.woltlab.gallery.image.marker"><![CDATA[Resimlerde etiketlendiğimde beni uyar]]></item>
+		<item name="wcf.user.notification.com.woltlab.gallery.image.mention"><![CDATA[Mesaj Aldığımda beni uyar]]></item>
+		<item name="wcf.user.notification.com.woltlab.gallery.imageComment.like.notification.like"><![CDATA[Yorumların beğenildiğinde beni uyar]]></item>
+		<item name="wcf.user.notification.com.woltlab.gallery.imageComment.notification.comment"><![CDATA[Resimlerime{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve videolarıma{/if} yorum yapıldığında beni uyar]]></item>
+		<item name="wcf.user.notification.com.woltlab.gallery.imageComment.response.like.notification.like"><![CDATA[Yorumlara verdiğim cevaplar beğenildiğinde beni uyar]]></item>
+		<item name="wcf.user.notification.com.woltlab.gallery.imageComment.response.notification.commentResponse"><![CDATA[Yorumlarıma yeni yanıtlar geldiğinde beni uyar]]></item>
+		<item name="wcf.user.notification.com.woltlab.gallery.imageComment.response.notification.commentResponseOwner"><![CDATA[Resimlerime{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve videolarıma{/if} yapılan yorumlara yeni yanıtlar geldiğinde beni uyar]]></item>
+		<item name="wcf.user.notification.com.woltlab.gallery.likeableImage.notification.like"><![CDATA[Resimlerim{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ya da videolarım{/if} beğenildiğinde beni uyar]]></item>
+	</category>
+	<category name="wcf.user.profile">
+		<item name="wcf.user.profile.menu.albums"><![CDATA[Albümler]]></item>
+	</category>
+	<category name="wcf.user.recentActivity">
+		<item name="wcf.user.recentActivity.com.woltlab.gallery.imageComment.recentActivityEvent"><![CDATA[Yorum (Image{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Video{/if})]]></item>
+		<item name="wcf.user.recentActivity.com.woltlab.gallery.imageComment.response.recentActivityEvent"><![CDATA[Cevapla (Image{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Video{/if})]]></item>
+		<item name="wcf.user.recentActivity.com.woltlab.gallery.likeableImage.recentActivityEvent"><![CDATA[Reaksiyon (Image{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Video{/if})]]></item>
+		<item name="wcf.user.recentActivity.com.woltlab.gallery.recentActivityEvent.image"><![CDATA[Resim{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Video{/if}]]></item>
+		<item name="wcf.user.recentActivity.com.woltlab.gallery.recentActivityEvent.images"><![CDATA[Resimler{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Videos{/if}]]></item>
+	</category>
+	<category name="shadow.invalid.page">
+		<item name="shadow.invalid.page.com.woltlab.gallery.AlbumImageSort.title"><![CDATA[Resimleri Sırala]]></item>
+		<item name="shadow.invalid.page.com.woltlab.gallery.AlbumList.title"><![CDATA[Albümler]]></item>
+		<item name="shadow.invalid.page.com.woltlab.gallery.ImageAdd.title"><![CDATA[Resim Ekle]]></item>
+		<item name="shadow.invalid.page.com.woltlab.gallery.ImageEdit.title"><![CDATA[Görüntüleri Düzenle]]></item>
+		<item name="shadow.invalid.page.com.woltlab.gallery.ImageList.title"><![CDATA[Galeri]]></item>
+		<item name="shadow.invalid.page.com.woltlab.gallery.Map.title"><![CDATA[Görüntü Haritası]]></item>
+		<item name="shadow.invalid.page.com.woltlab.gallery.MyAlbumList.title"><![CDATA[Albümlerim]]></item>
+		<item name="shadow.invalid.page.com.woltlab.gallery.MyFavoriteList.title"><![CDATA[Favorilerim]]></item>
+		<item name="shadow.invalid.page.com.woltlab.gallery.MyImageList.title"><![CDATA[Görüntülerim]]></item>
+		<item name="shadow.invalid.page.com.woltlab.gallery.MyVideoList.title"><![CDATA[Videolarım]]></item>
+		<item name="shadow.invalid.page.com.woltlab.gallery.UnreadAlbumList.title"><![CDATA[Yeni Albümler]]></item>
+		<item name="shadow.invalid.page.com.woltlab.gallery.UnreadImageList.title"><![CDATA[Yeni Görüntüler]]></item>
+		<item name="shadow.invalid.page.com.woltlab.gallery.VideoList.title"><![CDATA[Videolar]]></item>
+		<item name="shadow.invalid.page.com.woltlab.gallery.WatchedImageList.title"><![CDATA[İzlenen Resimler]]></item>
+	</category>
+	<category name="shadow.invalid.box">
+		<item name="shadow.invalid.box.com.woltlab.gallery.Categories.title"><![CDATA[(Galeri)Kategoriler]]></item>
+		<item name="shadow.invalid.box.com.woltlab.gallery.LatestComments.title"><![CDATA[En Son Yorumlar]]></item>
+		<item name="shadow.invalid.box.com.woltlab.gallery.TagCloud.title"><![CDATA[Etiketler]]></item>
+	</category>
+</language>
