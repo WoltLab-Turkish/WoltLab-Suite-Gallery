@@ -98,14 +98,14 @@
 		<item name="gallery.image.categoryIDs.error.tooMany"><![CDATA[Çok fazla kategori seçtiniz. Seçebileceğiniz maksimum kategori: {@GALLERY_IMAGE_MAX_CATEGORIES} {if GALLERY_IMAGE_MAX_CATEGORIES == 1}kategori{else}kategoriler{/if}.]]></item>
 		<item name="gallery.image.categoryIDs.overwrite.confirmMessage"><![CDATA[Tüm diğer yüklenen resimleri{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} br videoları{/if} seçilen kategorilere atamak istiyor musunuz?]]></item>
 		<item name="gallery.image.comment"><![CDATA[Galeri Yorumu]]></item>
-		<item name="gallery.image.comment.like.notification.message"><![CDATA[<strong>{$author}</strong> {if $image->isImage()}resim{else}video{/if} <strong>{$image->getTitle()}</strong> hakkındaki yorumunuza ({@$__wcf->getReactionHandler()->renderInlineList($reactions)}) tepki verdi.]]></item>
-		<item name="gallery.image.comment.like.notification.message.stacked"><![CDATA[{@'wcf.user.notification.stacked.authorList'|language} {if $image->isImage()}resim{else}video{/if} <strong>{$image->getTitle()}</strong> hakkındaki yorumunuza  ({@$__wcf->getReactionHandler()->renderInlineList($reactions)}) tepki verdi.]]></item>
+		<item name="gallery.image.comment.like.notification.message"><![CDATA[<strong>{$author}</strong> adlı kullanıcı <strong>{$image->getTitle()}</strong> adlı {if $image->isImage()}resim{else}video{/if}  hakkındaki yorumunuza ({@$__wcf->getReactionHandler()->renderInlineList($reactions)}) tepki verdi.]]></item>
+		<item name="gallery.image.comment.like.notification.message.stacked"><![CDATA[{@'wcf.user.notification.stacked.authorList'|language} adlı kullanıcı <strong>{$image->getTitle()}</strong> adlı {if $image->isImage()}resim{else}video{/if}  hakkındaki yorumunuza ({@$__wcf->getReactionHandler()->renderInlineList($reactions)}) tepki verdi.]]></item>
 		<item name="gallery.image.comment.like.notification.title"><![CDATA[({if $image->isImage()}Resimdeki{else}Videodaki{/if}) yorumunuzu beğendi]]></item>
 		<item name="gallery.image.comment.like.notification.title.stacked"><![CDATA[({if $image->isImage()}resim4{else}video{/if}) yorumunuzu {#$count} sayıda kullanıcı beğendi ]]></item>
 		<item name="gallery.image.comment.notification.mail.html"><![CDATA[<p>{@$authorList} {if $image->isImage()}resmine{else}videona{/if} <a href="{$image->getLink()}#comment{@$commentID}">{$image->getTitle()}</a> yorum yaptı:</p>]]></item>
 		<item name="gallery.image.comment.notification.mail.plaintext"><![CDATA[{@$authorList} {if $image->isImage()}resmine{else}video{na/if} “{@$image->getTitle()}” [URL:{@$image->getLink()}#comment{@$commentID}]{if $count == 1 && !$guestTimesTriggered}yorum yapğtı:{else}.{/if}]]></item>
-		<item name="gallery.image.comment.notification.message"><![CDATA[{if $author->userID}<strong>{$author}</strong>{else}Bir misafir{/if} {if $image->isImage()}resiminize{else}videonuza{/if} <strong>{$image->getTitle()}</strong> yorum yaptı.]]></item>
-		<item name="gallery.image.comment.notification.message.stacked"><![CDATA[{@'wcf.user.notification.stacked.authorList'|language} {if $image->isImage()}resiminize{else}videonuza{/if} <strong>{$image->getTitle()}</strong> yorum yaptı.]]></item>
+		<item name="gallery.image.comment.notification.message"><![CDATA[{if $author->userID}<strong>{$author}</strong> adlı kullanıcı {else}Bir misafir{/if}<strong>{$image->getTitle()}</strong> adlı {if $image->isImage()}resiminize{else}videonuza{/if} yorum yaptı.]]></item>
+		<item name="gallery.image.comment.notification.message.stacked"><![CDATA[{@'wcf.user.notification.stacked.authorList'|language} adlı kullanıcı <strong>{$image->getTitle()}</strong> adlı {if $image->isImage()}resiminize{else}videonuza{/if} yorum yaptı.]]></item>
 		<item name="gallery.image.commentResponse"><![CDATA[Galeri Yorumunu Yanıtla]]></item>
 		<item name="gallery.image.commentResponse.like.notification.message"><![CDATA[<strong>{$author}</strong> {if $image->isImage()}resimdeki{else}videodaki{/if} <strong>{$image->getTitle()}</strong> bir yoruma verdiğiniz yanıta ({@$__wcf->getReactionHandler()->renderInlineList($reactions)}) tepki gösterdi.]]></item>
 		<item name="gallery.image.commentResponse.like.notification.message.stacked"><![CDATA[{@'wcf.user.notification.stacked.authorList'|language} {if $image->isImage()}resimdeki{else}videodaki{/if} <strong>{$image->getTitle()}</strong> bir yoruma verdiğiniz yanıta ({@$__wcf->getReactionHandler()->renderInlineList($reactions)}) tepki gösterdi.]]></item>
@@ -113,12 +113,12 @@
 		<item name="gallery.image.commentResponse.like.notification.title.stacked"><![CDATA[({if $image->isImage()}Resim14{else}Video{/if}) bir yoruma verdiğiniz yanıta {#$count} sayıda kullanıcı tepki gösterdi ]]></item>
 		<item name="gallery.image.commentResponse.notification.mail.html"><![CDATA[<p>{@$authorList} {if $image->isImage()}resimdeki{else}videodaki{/if} <a href="{$image->getLink()}#comment{@$commentID}/response{@$responseID}">{$image->getTitle()}</a> hakkındaki yorumunuzu yanıtladı:</p>]]></item>
 		<item name="gallery.image.commentResponse.notification.mail.plaintext"><![CDATA[{@$authorList} {if $image->isImage()}resimdeki{else}videodaki{/if} “{@$image->getTitle()}” [URL:{@$image->getLink()}#comment{@$commentID}/response{@$responseID}]{if $count == 1 && !$guestTimesTriggered}hakkındaki yorumunuzu yanıtladı:{else}.{/if}]]></item>
-		<item name="gallery.image.commentResponse.notification.message"><![CDATA[{if $author->userID}<strong>{$author}</strong>{else}Bir misafir{/if} {if $image->isImage()}resim{else}video{/if} <strong>{$image->getTitle()}</strong> hakkındaki yorumunuza cevap verdi.]]></item>
-		<item name="gallery.image.commentResponse.notification.message.stacked"><![CDATA[{@'wcf.user.notification.stacked.authorList'|language} {if $image->isImage()}resim{else}video{/if} <strong>{$image->getTitle()}</strong> hakkındaki yorumunuza cevap verdi.]]></item>
+		<item name="gallery.image.commentResponse.notification.message"><![CDATA[{if $author->userID}<strong>{$author}</strong> adlı kullanıcı{else}Bir misafir{/if} <strong>{$image->getTitle()}</strong> adlı {if $image->isImage()}resim{else}video{/if} hakkındaki yorumunuza cevap verdi.]]></item>
+		<item name="gallery.image.commentResponse.notification.message.stacked"><![CDATA[{@'wcf.user.notification.stacked.authorList'|language} adlı kullanıcı <strong>{$image->getTitle()}</strong> adlı {if $image->isImage()}resim{else}video{/if} hakkındaki yorumunuza cevap verdi.]]></item>
 		<item name="gallery.image.commentResponseOwner.notification.mail.html"><![CDATA[<p>{@$authorList} {if $image->isImage()}resim{else}video{/if} hakkındaki yorumuna <strong>{$commentAuthor}</strong> tarafından <a href="{$image->getLink()}#comment{@$commentID}/response{@$responseID}">{$image->getTitle()}</a> yanıt verildi:</p>]]></item>
 		<item name="gallery.image.commentResponseOwner.notification.mail.plaintext"><![CDATA[{@$authorList} {if $image->isImage()}resim{else}video{/if} hakkındaki yorumuna {@$commentAuthor} tarafından “{@$image->getTitle()}” [URL:{@$image->getLink()}#comment{@$commentID}/response{@$responseID}]{if $count == 1 && !$guestTimesTriggered} yanıt verildi:{else}.{/if}]]></item>
-		<item name="gallery.image.commentResponseOwner.notification.message"><![CDATA[{if $author->userID}<strong>{$author}</strong>{else}Bir misafir{/if} {if $image->isImage()}resimdeki{else}videodaki{/if}  yapılan bir yoruma <strong>{$commentAuthor}</strong>  <strong>{$image->getTitle()}</strong> yanıt verildi.]]></item>
-		<item name="gallery.image.commentResponseOwner.notification.message.stacked"><![CDATA[<strong>{$author}</strong> tarafından {if $image->isImage()}resiminize{else}videonuza {/if} {@'wcf.user.notification.stacked.authorList'|language}  <strong>{$image->getTitle()}</strong> yapılan bir yoruma yanıt verildi.]]></item>
+		<item name="gallery.image.commentResponseOwner.notification.message"><![CDATA[{if $author->userID}<strong>{$author}</strong> adlı kullanıcı{else}Bir misafir{/if} <strong>{$image->getTitle()}</strong> adlı {if $image->isImage()}resimdeki{else}videodaki{/if} yapılan bir yoruma, <strong>{$commentAuthor}</strong> tarafıdan yanıt verildi.]]></item>
+		<item name="gallery.image.commentResponseOwner.notification.message.stacked"><![CDATA[<strong>{$author}</strong> adlı kullanıcı <strong>{$image->getTitle()}</strong> adlı {if $image->isImage()}resiminize{else}videonuza {/if} {@'wcf.user.notification.stacked.authorList'|language} yapılan bir yoruma yanıt verildi.]]></item>
 		<item name="gallery.image.comments"><![CDATA[Yorumlar]]></item>
 		<item name="gallery.image.comments.count"><![CDATA[{#$image->comments} yorum{if $image->comments != 1}{/if}]]></item>
 		<item name="gallery.image.comments.label"><![CDATA[{#$comments} Yorum{if $comments != 1}{/if}]]></item>
@@ -214,8 +214,8 @@
 		<item name="gallery.image.information"><![CDATA[Ayrıntılar]]></item>
 		<item name="gallery.image.isDeleted"><![CDATA[Silindi]]></item>
 		<item name="gallery.image.isDisabled"><![CDATA[Etkin değil]]></item>
-		<item name="gallery.image.like.notification.message"><![CDATA[<strong>{$author}</strong> {if $image->isImage()}resiminize{else}videonuza{/if} <strong>{$image->getTitle()}</strong> ({@$__wcf->getReactionHandler()->renderInlineList($reactions)}) tepki verdi.]]></item>
-		<item name="gallery.image.like.notification.message.stacked"><![CDATA[{@'wcf.user.notification.stacked.authorList'|language} {if $image->isImage()}resiminize{else}videonuza{/if} <strong>{$image->getTitle()}</strong> ({@$__wcf->getReactionHandler()->renderInlineList($reactions)}) tepki verdi.]]></item>
+		<item name="gallery.image.like.notification.message"><![CDATA[<strong>{$author}</strong> adlı kullanıcı <strong>{$image->getTitle()}</strong> adlı {if $image->isImage()}resiminize{else}videonuza{/if} ({@$__wcf->getReactionHandler()->renderInlineList($reactions)}) ile tepki verdi.]]></item>
+		<item name="gallery.image.like.notification.message.stacked"><![CDATA[{@'wcf.user.notification.stacked.authorList'|language} adlı kullanıcı <strong>{$image->getTitle()}</strong> adlı {if $image->isImage()}resiminize{else}videonuza{/if} ({@$__wcf->getReactionHandler()->renderInlineList($reactions)}) ile tepki verdi.]]></item>
 		<item name="gallery.image.like.notification.title"><![CDATA[{if $image->isImage()}resiminize{else}videonuza{/if} tepki verdi]]></item>
 		<item name="gallery.image.like.notification.title.stacked"><![CDATA[{#$count} kullanıcılar {if $image->isImage()}resim{else}video{/if} tepki verdi]]></item>
 		<item name="gallery.image.list.displayMode.grid"><![CDATA[Tablo]]></item>
@@ -227,7 +227,7 @@
 		<item name="gallery.image.marker"><![CDATA[Etiket]]></item>
 		<item name="gallery.image.marker.add"><![CDATA[Etiket ekle]]></item>
 		<item name="gallery.image.marker.delete.confirmMessage"><![CDATA[Bu etiketi gerçekten silmek istiyor musunuz?]]></item>
-		<item name="gallery.image.marker.description"><![CDATA[Bu konuma bir etiket eklemek için resme tıklayın.]]></item>
+		<item name="gallery.image.marker.description"><![CDATA[Bu konuma bir etiket eklemek için resime tıklayın.]]></item>
 		<item name="gallery.image.marker.edit"><![CDATA[Etiketi Düzenle]]></item>
 		<item name="gallery.image.marker.notification.mail.html"><![CDATA[<p><strong>{$author}</strong> <a href="{$image->getLink()}">{$image->getTitle()}</a> resimde seni işaretledi:</p>]]></item>
 		<item name="gallery.image.marker.notification.mail.plaintext"><![CDATA[{@$author} “{@$image->getTitle()}” resimde seni işaretledi [URL:{@$image->getLink()}]:]]></item>
@@ -261,11 +261,11 @@
 		<item name="gallery.image.pendingImages.delete.confirmMessage"><![CDATA[Gerçekten bekleyen resimleri {if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve  videoları silmek istiyor musunuz?{/if}?]]></item>
 		<item name="gallery.image.pendingImages.load"><![CDATA[Yüklenen fakat henüz kaydedilmemiş resimleri{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/videoları yükle{/if}]]></item>
 		<item name="gallery.image.previousImage"><![CDATA[Önceki {if $previousImage->isImage()}Resim{else}Video{/if}]]></item>
-		<item name="gallery.image.recentActivity.image"><![CDATA[{if $image->isVideoLink}Ekledi{else}Yükledi{/if} {if $image->isImage()}görseli{else}videoyu{/if} <a href="{$image->getLink()}" class="galleryImageLink" data-image-id="{@$image->imageID}">{$image->title}</a>.]]></item>
-		<item name="gallery.image.recentActivity.imageComment"><![CDATA[{if $image->isImage()}görsel{else}video{/if} üzerinde yorum yaptı <a href="{$comment->getLink()}" class="galleryImageLink" data-image-id="{@$image->imageID}">{$image->title}</a>.]]></item>
-		<item name="gallery.image.recentActivity.imageCommentResponse"><![CDATA[{user object=$commentAuthor} tarafından yapılan yorumuna yanıt verdi {if $image->isImage()}görsel{else}video{/if} üzerinde <a href="{$response->getLink()}" class="galleryImageLink" data-image-id="{@$image->imageID}">{$image->title}</a>.]]></item>
+		<item name="gallery.image.recentActivity.image"><![CDATA[<a href="{$image->getLink()}" class="galleryImageLink" data-image-id="{@$image->imageID}">{$image->title}</a> adlı {if $image->isImage()}resimi{else}videoyu{/if} {if $image->isVideoLink}ekledi{else}yükledi{/if}.]]></item>
+		<item name="gallery.image.recentActivity.imageComment"><![CDATA[<a href="{$comment->getLink()}" class="galleryImageLink" data-image-id="{@$image->imageID}">{$image->title}</a> adlı {if $image->isImage()}resime{else}videoya{/if} yorum yaptı.]]></item>
+		<item name="gallery.image.recentActivity.imageCommentResponse"><![CDATA[<a href="{$response->getLink()}" class="galleryImageLink" data-image-id="{@$image->imageID}">{$image->title}</a> adlı {if $image->isImage()}resime{else}videoya{/if} {user object=$commentAuthor} tarafından yapılan yorumuna yanıt verdi.]]></item>
 		<item name="gallery.image.recentActivity.images"><![CDATA[{if $images}{#$images} resim{if $images > 1}{/if}{/if}{if $videos}{if $images} ve {/if}{#$videos} video{if $videos > 1}{/if}{/if} eklendi.]]></item>
-		<item name="gallery.image.recentActivity.likedImage"><![CDATA[{if $image->isImage()}Resim{else}video{/if} <span title="{$reactionType->getTitle()}" class="jsTooltip">{@$reactionType->renderIcon()}</span> ile tepki verdi <a href="{$image->getLink()}" class="galleryImageLink" data-image-id="{@$image->imageID}">{$image->title}</a>.]]></item>
+		<item name="gallery.image.recentActivity.likedImage"><![CDATA[<a href="{$image->getLink()}" class="galleryImageLink" data-image-id="{@$image->imageID}">{$image->title}</a> adlı {if $image->isImage()}resime{else}videoya{/if} <span title="{$reactionType->getTitle()}" class="jsTooltip">{@$reactionType->renderIcon()}</span> ile tepki verdi.]]></item>
 		<item name="gallery.image.restore"><![CDATA[Sıfırla]]></item>
 		<item name="gallery.image.rotate"><![CDATA[Resmi Döndür]]></item>
 		<item name="gallery.image.rotate.180"><![CDATA[ 180° Döndür]]></item>
@@ -532,8 +532,8 @@
 		<item name="wcf.acp.option.gallery_image_watermark_font_size.description"><![CDATA[Punto cinsinden yazı tipi boyutu.]]></item>
 		<item name="wcf.acp.option.gallery_image_watermark_image"><![CDATA[Resim]]></item>
 		<item name="wcf.acp.option.gallery_image_watermark_image.removeFile"><![CDATA[Mevcut resimleri kaldır]]></item>
-		<item name="wcf.acp.option.gallery_image_watermark_original"><![CDATA[Orijinal resme filigran uygula]]></item>
-		<item name="wcf.acp.option.gallery_image_watermark_original.description"><![CDATA[Dikkat! Filigranın asıl resme uygulanması kalıcıdır ve daha sonra geri çevrilemez.]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_original"><![CDATA[Orijinal resime filigran uygula]]></item>
+		<item name="wcf.acp.option.gallery_image_watermark_original.description"><![CDATA[Dikkat! Filigranın asıl resime uygulanması kalıcıdır ve daha sonra geri çevrilemez.]]></item>
 		<item name="wcf.acp.option.gallery_image_watermark_position"><![CDATA[Pozisyon]]></item>
 		<item name="wcf.acp.option.gallery_image_watermark_position.bottomCenter"><![CDATA[Alt orta]]></item>
 		<item name="wcf.acp.option.gallery_image_watermark_position.bottomLeft"><![CDATA[Sol alt]]></item>
@@ -622,10 +622,10 @@ Gerçek API anahtarından önce ve sonra boşluk olmadığından emin olun!]]></
 		<item name="wcf.clipboard.label.com.woltlab.gallery.image.marked"><![CDATA[{if $count == 1}Bir Resim{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Video{/if}{else}{#$count} Resim{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Video{/if}{/if}]]></item>
 	</category>
 	<category name="wcf.like">
-    <item name="wcf.like.objectType.com.woltlab.gallery.likeableImage"><![CDATA[Görsel{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Video{/if}]]></item>
-    <item name="wcf.like.title.com.woltlab.gallery.imageComment"><![CDATA[{if $commentAuthor}{user object=$commentAuthor}{else}bir misafir{/if} tarafından yapılan yoruma {@$reaction->render()} ile tepki verdi {if $image->isImage()}görsel{else}video{/if} üzerinde {anchor link=$comment content=$image}.]]></item>
-    <item name="wcf.like.title.com.woltlab.gallery.imageComment.response"><![CDATA[{if $responseAuthor}{user object=$responseAuthor}{else}bir misafir{/if} tarafından yapılan yanıta {@$reaction->render()} ile tepki verdi {if $commentAuthor}{user object=$commentAuthor}{else}bir misafir{/if} tarafından yapılan yorum üzerinde {if $image->isImage()}görsel{else}video{/if} {anchor link=$response content=$image}.]]></item>
-    <item name="wcf.like.title.com.woltlab.gallery.likeableImage"><![CDATA[{if $image->isImage()}görsel{else}video{/if} {anchor object=$image} üzerinde {@$reaction->render()} ile tepki verdi.]]></item>
+		<item name="wcf.like.objectType.com.woltlab.gallery.likeableImage"><![CDATA[Resim{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Video{/if}]]></item>
+		<item name="wcf.like.title.com.woltlab.gallery.imageComment"><![CDATA[{if $commentAuthor}{user object=$commentAuthor}{else}bir misafir{/if} tarafından yapılan yoruma {@$reaction->render()} tepki verdi {if $image->isImage()}resim{else}video{/if} {anchor link=$comment content=$image}.]]></item>
+		<item name="wcf.like.title.com.woltlab.gallery.imageComment.response"><![CDATA[{if $responseAuthor}{user object=$responseAuthor}{else}bir misafir{/if} tarafından yapılan yoruma verilen cevaba {@$reaction->render()} tepki verdi {if $commentAuthor}{user object=$commentAuthor}{else}bir misafir{/if} {if $image->isImage()}resim{else}video{/if} {anchor link=$response content=$image}.]]></item>
+		<item name="wcf.like.title.com.woltlab.gallery.likeableImage"><![CDATA[{anchor object=$image} adlı {if $image->isImage()}resime{else}videoya{/if} {@$reaction->render()} ile tepki verdi.]]></item>
 	</category>
 	<category name="wcf.menu">
 		<item name="wcf.menu.item.com.woltlab.gallery.AlbumList"><![CDATA[Albümler]]></item>
@@ -701,9 +701,9 @@ Gerçek API anahtarından önce ve sonra boşluk olmadığından emin olun!]]></
 		<item name="wcf.user.profile.menu.albums"><![CDATA[Albümler]]></item>
 	</category>
 	<category name="wcf.user.recentActivity">
-		<item name="wcf.user.recentActivity.com.woltlab.gallery.imageComment.recentActivityEvent"><![CDATA[Yorum (Image{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Video{/if})]]></item>
-		<item name="wcf.user.recentActivity.com.woltlab.gallery.imageComment.response.recentActivityEvent"><![CDATA[Cevapla (Image{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Video{/if})]]></item>
-		<item name="wcf.user.recentActivity.com.woltlab.gallery.likeableImage.recentActivityEvent"><![CDATA[Reaksiyon (Image{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Video{/if})]]></item>
+		<item name="wcf.user.recentActivity.com.woltlab.gallery.imageComment.recentActivityEvent"><![CDATA[Yorum (Resim{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Video{/if})]]></item>
+		<item name="wcf.user.recentActivity.com.woltlab.gallery.imageComment.response.recentActivityEvent"><![CDATA[Cevapla (Resim{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Video{/if})]]></item>
+		<item name="wcf.user.recentActivity.com.woltlab.gallery.likeableImage.recentActivityEvent"><![CDATA[Reaksiyon (Resim{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Video{/if})]]></item>
 		<item name="wcf.user.recentActivity.com.woltlab.gallery.recentActivityEvent.image"><![CDATA[Resim{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Video{/if}]]></item>
 		<item name="wcf.user.recentActivity.com.woltlab.gallery.recentActivityEvent.images"><![CDATA[Resimler{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Videos{/if}]]></item>
 	</category>
