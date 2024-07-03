@@ -348,14 +348,14 @@
 	<category name="gallery.index">
 		<item name="gallery.index.stats"><![CDATA[İstatistikler]]></item>
 		<item name="gallery.index.stats.detail"><![CDATA[<ul class="inlineList dotSeparated">
-<li>{plural value=$stats[authors] 1='1 Author' other='# Authors'}</li>
-<li>{plural value=$stats[albums] 1='1 Album' other='# Albums'}</li>
-<li>{plural value=$stats[images] 1='1 Image' other='# Images'}{if $stats[imagesPerDay]} ({plural value=$stats[imagesPerDay] 1='1 Image' other='# Images'} günlük){/if}</li>
+<li>{plural value=$stats[authors] 1='1 Yazar' other='# Yazar'}</li>
+<li>{plural value=$stats[albums] 1='1 Albüm' other='# Albüm'}</li>
+<li>{plural value=$stats[images] 1='1 Resim' other='# Resim'}{if $stats[imagesPerDay]} ({plural value=$stats[imagesPerDay] 1='1 Resim' other='# Resim'} günlük){/if}</li>
 {if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}
-	<li>{plural value=$stats[videos] 1='1 Video' other='# Videos'}{if $stats[videosPerDay]} ({plural value=$stats[videosPerDay] 1='1 Video' other='# Videos'} günlük){/if}</li>
+	<li>{plural value=$stats[videos] 1='1 Video' other='# Video'}{if $stats[videosPerDay]} ({plural value=$stats[videosPerDay] 1='1 Video' other='# Video'} günlük){/if}</li>
 {/if}
 <li>{$stats[size]|filesize} Toplam Dosya Boyutu</li>
-<li>{plural value=$stats[comments] 1='1 Comment' other='# Comments'}</li>
+<li>{plural value=$stats[comments] 1='1 Yorum' other='# Yorum'}</li>
 </ul>]]></item>
 	</category>
 	<category name="gallery.search">
