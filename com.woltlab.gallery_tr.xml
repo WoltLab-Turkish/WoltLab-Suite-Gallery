@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/5.4/language.xsd" languagecode="tr" languagename="Türkçe" countrycode="tr">
+<language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/6.0/language.xsd" languagecode="tr" languagename="Türkçe" countrycode="tr">
 	<category name="gallery.acp.image">
 		<item name="gallery.acp.image.bulkProcessing"><![CDATA[Resimlerin {if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve Videoların Toplu işlenmesi{/if}]]></item>
 		<item name="gallery.acp.image.bulkProcessing.action"><![CDATA[Aksiyon]]></item>
@@ -11,7 +11,6 @@
 		<item name="gallery.acp.image.bulkProcessing.enableComments"><![CDATA[Yorumları Etkinleştir]]></item>
 		<item name="gallery.acp.image.bulkProcessing.restore"><![CDATA[Onar]]></item>
 		<item name="gallery.acp.image.bulkProcessing.setCategories"><![CDATA[Kategorileri Ayarla]]></item>
-		<item name="gallery.acp.image.bulkProcessing.setCategories.categories"><![CDATA[Kategoriler]]></item>
 		<item name="gallery.acp.image.bulkProcessing.setCategories.categories.description"><![CDATA[Mevcut kategoriler, seçilen kategorilerin üzerine yazılacaktır.]]></item>
 		<item name="gallery.acp.image.bulkProcessing.success"><![CDATA[Seçilen eylem yürütüldü ve {#$affectedObjectCount} resmini etkiledi {if $affectedObjectCount != 1} resmini etkiledi {/if}{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/video{if $affectedObjectCount != 1}s{/if}{/if}.{if $affectedObjectCount > 0}<br>Lütfen <a href="{link controller='RebuildData'}{/link}">“Bütünlüğünü Doğrulayın”</a>.{/if}]]></item>
 		<item name="gallery.acp.image.bulkProcessing.trash"><![CDATA[Çöp Kutusuna Taşı]]></item>
@@ -68,7 +67,8 @@
 		<item name="gallery.image.albumID"><![CDATA[Albüm]]></item>
 		<item name="gallery.image.albumID.error.cannotAddToPrivateAlbumDueToModeration"><![CDATA[Yeni resimlerin moderatörler tarafından onaylanması gerektiğinden, yeni resimleri özel albümlere yüklemenize izin verilmez.]]></item>
 		<item name="gallery.image.albumID.overwrite.confirmMessage"><![CDATA[Yüklenen diğer tüm {if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} resimleri ve videolar{/if} bu albüme gerçekten atamak istiyor musunuz?]]></item>
-		<item name="gallery.image.albumImage"><![CDATA[{if $image->isImage()}Image{else}Video{/if} {#$albumImage} {if $albumImageCount|isset}{#$albumImageCount}{else}{#($image->getAlbum()->images + $image->getAlbum()->videos)}{/if}]]></item>
+		<item name="gallery.image.albumImage"><![CDATA[{if $image->isImage()}Resim{else}Video{/if} {#$albumImage} {if $albumImageCount|isset}{#$albumImageCount}{else}{#($image->getAlbum()->images + $image->getAlbum()->videos)}{/if}]]></item>
+		<item name="gallery.image.bbcode.albumImage"><![CDATA[{if $image->isImage()}Resim{else}Video{/if} {#$albumImage} {#$imageCount}{if $albumImageCount > $imageCount} ({#($albumImageCount - $imageCount)} tane daha){/if}]]></item>
 		<item name="gallery.image.boxList.description.comments"><![CDATA[{#$image->comments} Yorum Yap{if $image->comments != 1}{/if}]]></item>
 		<item name="gallery.image.boxList.description.cumulativeLikes"><![CDATA[{include file='__topReaction' cachedReactions=$image->cachedReactions render='full'}]]></item>
 		<item name="gallery.image.boxList.description.favorites"><![CDATA[Favoriler: {#$image->favorites}]]></item>
@@ -93,7 +93,6 @@
 		<item name="gallery.image.button.sort"><![CDATA[Sınıflandır]]></item>
 		<item name="gallery.image.button.upload"><![CDATA[Yükle]]></item>
 		<item name="gallery.image.camera"><![CDATA[Kamera]]></item>
-		<item name="gallery.image.categories"><![CDATA[Katergoriler]]></item>
 		<item name="gallery.image.categorizedImages"><![CDATA[Bu kategorideki Resimler{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve videolar{/if}  “{$category->getTitle()}”]]></item>
 		<item name="gallery.image.categoryIDs.error.tooMany"><![CDATA[Çok fazla kategori seçtiniz. Seçebileceğiniz maksimum kategori: {@GALLERY_IMAGE_MAX_CATEGORIES} {if GALLERY_IMAGE_MAX_CATEGORIES == 1}kategori{else}kategoriler{/if}.]]></item>
 		<item name="gallery.image.categoryIDs.overwrite.confirmMessage"><![CDATA[Tüm diğer yüklenen resimleri{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} br videoları{/if} seçilen kategorilere atamak istiyor musunuz?]]></item>
@@ -122,7 +121,6 @@
 		<item name="gallery.image.comments"><![CDATA[Yorumlar]]></item>
 		<item name="gallery.image.comments.count"><![CDATA[{#$image->comments} yorum{if $image->comments != 1}{/if}]]></item>
 		<item name="gallery.image.comments.label"><![CDATA[{#$comments} Yorum{if $comments != 1}{/if}]]></item>
-		<item name="gallery.image.condition.category"><![CDATA[Kategori]]></item>
 		<item name="gallery.image.condition.category.description"><![CDATA[Resimler{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/Videolar{/if} seçilen kategorilerden herhangi birinde olması gerekir. “Ctrl / Shift” tuşu (Windows) veya “Command” (Mac OS) tuşu basılı tutularak ve istenen kategoriler tıklanarak birden fazla kategori seçilebilir.]]></item>
 		<item name="gallery.image.condition.comments"><![CDATA[Yorumlar]]></item>
 		<item name="gallery.image.condition.displayMode"><![CDATA[Görüntü Modu]]></item>
@@ -261,11 +259,12 @@
 		<item name="gallery.image.pendingImages.delete.confirmMessage"><![CDATA[Gerçekten bekleyen resimleri {if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS} ve  videoları silmek istiyor musunuz?{/if}?]]></item>
 		<item name="gallery.image.pendingImages.load"><![CDATA[Yüklenen fakat henüz kaydedilmemiş resimleri{if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}/videoları yükle{/if}]]></item>
 		<item name="gallery.image.previousImage"><![CDATA[Önceki {if $previousImage->isImage()}Resim{else}Video{/if}]]></item>
-		<item name="gallery.image.recentActivity.image"><![CDATA[<a href="{$image->getLink()}" class="galleryImageLink" data-image-id="{@$image->imageID}">{$image->title}</a> adlı {if $image->isImage()}resimi{else}videoyu{/if} {if $image->isVideoLink}ekledi{else}yükledi{/if}.]]></item>
-		<item name="gallery.image.recentActivity.imageComment"><![CDATA[<a href="{$comment->getLink()}" class="galleryImageLink" data-image-id="{@$image->imageID}">{$image->title}</a> adlı {if $image->isImage()}resime{else}videoya{/if} yorum yaptı.]]></item>
-		<item name="gallery.image.recentActivity.imageCommentResponse"><![CDATA[<a href="{$response->getLink()}" class="galleryImageLink" data-image-id="{@$image->imageID}">{$image->title}</a> adlı {if $image->isImage()}resime{else}videoya{/if} {user object=$commentAuthor} tarafından yapılan yorumuna yanıt verdi.]]></item>
-		<item name="gallery.image.recentActivity.images"><![CDATA[{if $images}{#$images} resim{if $images > 1}{/if}{/if}{if $videos}{if $images} ve {/if}{#$videos} video{if $videos > 1}{/if}{/if} eklendi.]]></item>
+		<item name="gallery.image.recentActivity.image"><![CDATA[<strong>{$author}</strong>, <strong>{$image->title}</strong> adlı the {if $image->isImage()}resimi{else}videoyu{/if} {if $image->isVideoLink}ekledi{else}yüklendi{/if}.]]></item>
+		<item name="gallery.image.recentActivity.imageComment"><![CDATA[<strong>{$author}</strong>, <strong>{$image->title}</strong> adlı {if $image->isImage()}resime{else}videoya{/if} yorum yaptı.]]></item>
+		<item name="gallery.image.recentActivity.imageCommentResponse"><![CDATA[<strong>{$author}</strong>, <strong>{$image->title}</strong> adlı {if $image->isImage()}resime{else}videoya{/if} <strong>{$commentAuthor}</strong> tarafından yapılan yorumuna yanıt verdi.]]></item>
+		<item name="gallery.image.recentActivity.images"><![CDATA[<strong>{$author}</strong>, {if $images}{#$images} resim{if $images > 1}ler{/if}{/if}{if $videos}{if $images} ve {/if}{#$videos} video{if $videos > 1}lar{/if}{/if} yüklendi.]]></item>
 		<item name="gallery.image.recentActivity.likedImage"><![CDATA[<a href="{$image->getLink()}" class="galleryImageLink" data-image-id="{@$image->imageID}">{$image->title}</a> adlı {if $image->isImage()}resime{else}videoya{/if} <span title="{$reactionType->getTitle()}" class="jsTooltip">{@$reactionType->renderIcon()}</span> ile tepki verdi.]]></item>
+		<item name="gallery.image.recentActivity.likedImage"><![CDATA[<strong>{$author}</strong>,  <strong>{$image->title}</strong> adlı {if $image->isImage()}resime{else}videoya{/if} <span title="{$reactionType->getTitle()}" class="jsTooltip">{unsafe:$reactionType->renderIcon()}</span> ile tepki verildi.]]></item>
 		<item name="gallery.image.restore"><![CDATA[Sıfırla]]></item>
 		<item name="gallery.image.rotate"><![CDATA[Resmi Döndür]]></item>
 		<item name="gallery.image.rotate.180"><![CDATA[ 180° Döndür]]></item>
@@ -422,8 +421,8 @@
 		<item name="wcf.acp.content.provider.com.woltlab.gallery.image"><![CDATA[Resimler]]></item>
 	</category>
 	<category name="wcf.acp.cronjob">
-		<item name="wcf.acp.cronjob.description.cronjob29"><![CDATA[Çöp Kutusundaki Resimleri boşaltır]]></item>
-		<item name="wcf.acp.cronjob.description.cronjob30"><![CDATA[Sahipsiz Resimleri siler]]></item>
+		<item name="wcf.acp.cronjob.description.cronjob27"><![CDATA[Çöp Kutusundaki Resimleri boşaltır]]></item>
+		<item name="wcf.acp.cronjob.description.cronjob28"><![CDATA[Sahipsiz Resimleri siler]]></item>
 	</category>
 	<category name="wcf.acp.dataImport">
 		<item name="wcf.acp.dataImport.data.com.woltlab.gallery.album"><![CDATA[Albümler]]></item>
