@@ -263,7 +263,6 @@
 		<item name="gallery.image.recentActivity.imageComment"><![CDATA[<strong>{$author}</strong>, <strong>{$image->title}</strong> adlı {if $image->isImage()}resime{else}videoya{/if} yorum yaptı.]]></item>
 		<item name="gallery.image.recentActivity.imageCommentResponse"><![CDATA[<strong>{$author}</strong>, <strong>{$image->title}</strong> adlı {if $image->isImage()}resime{else}videoya{/if} <strong>{$commentAuthor}</strong> tarafından yapılan yorumuna yanıt verdi.]]></item>
 		<item name="gallery.image.recentActivity.images"><![CDATA[<strong>{$author}</strong>, {if $images}{#$images} resim{if $images > 1}ler{/if}{/if}{if $videos}{if $images} ve {/if}{#$videos} video{if $videos > 1}lar{/if}{/if} yüklendi.]]></item>
-		<item name="gallery.image.recentActivity.likedImage"><![CDATA[<a href="{$image->getLink()}" class="galleryImageLink" data-image-id="{@$image->imageID}">{$image->title}</a> adlı {if $image->isImage()}resime{else}videoya{/if} <span title="{$reactionType->getTitle()}" class="jsTooltip">{@$reactionType->renderIcon()}</span> ile tepki verdi.]]></item>
 		<item name="gallery.image.recentActivity.likedImage"><![CDATA[<strong>{$author}</strong>,  <strong>{$image->title}</strong> adlı {if $image->isImage()}resime{else}videoya{/if} <span title="{$reactionType->getTitle()}" class="jsTooltip">{unsafe:$reactionType->renderIcon()}</span> ile tepki verildi.]]></item>
 		<item name="gallery.image.restore"><![CDATA[Sıfırla]]></item>
 		<item name="gallery.image.rotate"><![CDATA[Resmi Döndür]]></item>
