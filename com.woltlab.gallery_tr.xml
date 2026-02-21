@@ -70,7 +70,6 @@
 		<item name="gallery.image.albumImage"><![CDATA[{if $image->isImage()}Resim{else}Video{/if} {#$albumImage} {if $albumImageCount|isset}{#$albumImageCount}{else}{#($image->getAlbum()->images + $image->getAlbum()->videos)}{/if}]]></item>
 		<item name="gallery.image.bbcode.albumImage"><![CDATA[{if $image->isImage()}Resim{else}Video{/if} {#$albumImage} {#$imageCount}{if $albumImageCount > $imageCount} ({#($albumImageCount - $imageCount)} tane daha){/if}]]></item>
 		<item name="gallery.image.boxList.description.comments"><![CDATA[{#$image->comments} Yorum Yap{if $image->comments != 1}{/if}]]></item>
-		<item name="gallery.image.boxList.description.cumulativeLikes"><![CDATA[{include file='__topReaction' cachedReactions=$image->cachedReactions render='full'}]]></item>
 		<item name="gallery.image.boxList.description.favorites"><![CDATA[Favoriler: {#$image->favorites}]]></item>
 		<item name="gallery.image.boxList.description.views"><![CDATA[{#$image->views} Görünüm{if $image->views != 1}{/if}]]></item>
 		<item name="gallery.image.browser"><![CDATA[Galeri]]></item>
@@ -263,8 +262,7 @@
 		<item name="gallery.image.recentActivity.imageComment"><![CDATA[<strong>{$author}</strong>, <strong>{$image->title}</strong> adlı {if $image->isImage()}resime{else}videoya{/if} yorum yaptı.]]></item>
 		<item name="gallery.image.recentActivity.imageCommentResponse"><![CDATA[<strong>{$author}</strong>, <strong>{$image->title}</strong> adlı {if $image->isImage()}resime{else}videoya{/if} <strong>{$commentAuthor}</strong> tarafından yapılan yorumuna yanıt verdi.]]></item>
 		<item name="gallery.image.recentActivity.images"><![CDATA[<strong>{$author}</strong>, {if $images}{#$images} resim{if $images > 1}ler{/if}{/if}{if $videos}{if $images} ve {/if}{#$videos} video{if $videos > 1}lar{/if}{/if} yüklendi.]]></item>
-		<item name="gallery.image.recentActivity.likedImage"><![CDATA[<a href="{$image->getLink()}" class="galleryImageLink" data-image-id="{@$image->imageID}">{$image->title}</a> adlı {if $image->isImage()}resime{else}videoya{/if} <span title="{$reactionType->getTitle()}" class="jsTooltip">{@$reactionType->renderIcon()}</span> ile tepki verdi.]]></item>
-		<item name="gallery.image.recentActivity.likedImage"><![CDATA[<strong>{$author}</strong>,  <strong>{$image->title}</strong> adlı {if $image->isImage()}resime{else}videoya{/if} <span title="{$reactionType->getTitle()}" class="jsTooltip">{unsafe:$reactionType->renderIcon()}</span> ile tepki verildi.]]></item>
+		<item name="gallery.image.recentActivity.likedImage"><![CDATA[<strong>{$author}</strong>, {if $image->isImage()}resme{else}videoya{/if} {unsafe:$reactionType->renderIcon()} ile tepki verdi: <strong>{$image->title}</strong>.]]></item>
 		<item name="gallery.image.restore"><![CDATA[Sıfırla]]></item>
 		<item name="gallery.image.rotate"><![CDATA[Resmi Döndür]]></item>
 		<item name="gallery.image.rotate.180"><![CDATA[ 180° Döndür]]></item>
@@ -278,7 +276,6 @@
 		<item name="gallery.image.sortField.creationTime"><![CDATA[Erstellungszeitpunkt]]></item>
 		<item name="gallery.image.sortField.cumulativeLikes"><![CDATA[Beğeniler]]></item>
 		<item name="gallery.image.sortField.favorites"><![CDATA[Favoriten]]></item>
-		<item name="gallery.image.sortField.random"><![CDATA[Rasgele]]></item>
 		<item name="gallery.image.sortField.showOrder"><![CDATA[Standardsortierung]]></item>
 		<item name="gallery.image.sortField.title"><![CDATA[Başlık]]></item>
 		<item name="gallery.image.sortField.uploadTime"><![CDATA[Yükleme Zamanı]]></item>
@@ -347,14 +344,14 @@
 	<category name="gallery.index">
 		<item name="gallery.index.stats"><![CDATA[İstatistikler]]></item>
 		<item name="gallery.index.stats.detail"><![CDATA[<ul class="inlineList dotSeparated">
-<li>{plural value=$stats[authors] 1='1 Yazar' other='# Yazar'}</li>
-<li>{plural value=$stats[albums] 1='1 Albüm' other='# Albüm'}</li>
-<li>{plural value=$stats[images] 1='1 Resim' other='# Resim'}{if $stats[imagesPerDay]} ({plural value=$stats[imagesPerDay] 1='1 Resim' other='# Resim'} günlük){/if}</li>
+<li>{plural value=$galleryStats->authors 1='1 Yazar' other='# Yazar'}</li>
+<li>{plural value=$galleryStats->albums 1='1 Albüm' other='# Albüm'}</li>
+<li>{plural value=$galleryStats->images 1='1 Resim' other='# Resim'}{if $galleryStats->imagesPerDay} (Günde {plural value=$galleryStats->imagesPerDay 1='1 Resim' other='# Resim'}){/if}</li>
 {if GALLERY_VIDEO_UPLOAD || GALLERY_VIDEO_LINKS}
-	<li>{plural value=$stats[videos] 1='1 Video' other='# Video'}{if $stats[videosPerDay]} ({plural value=$stats[videosPerDay] 1='1 Video' other='# Video'} günlük){/if}</li>
+	<li>{plural value=$galleryStats->videos 1='1 Video' other='# Video'}{if $galleryStats->videosPerDay} (Günde {plural value=$galleryStats->videosPerDay 1='1 Video' other='# Video'}){/if}</li>
 {/if}
-<li>{$stats[size]|filesize} Toplam Dosya Boyutu</li>
-<li>{plural value=$stats[comments] 1='1 Yorum' other='# Yorum'}</li>
+<li>{$galleryStats->filesize|filesize} Toplam Dosya Boyutu</li>
+<li>{plural value=$galleryStats->comments 1='1 Yorum' other='# Yorum'}</li>
 </ul>]]></item>
 	</category>
 	<category name="gallery.search">
@@ -677,8 +674,6 @@ Gerçek API anahtarından önce ve sonra boşluk olmadığından emin olun!]]></
 		<item name="wcf.user.activityPoint.objectType.com.woltlab.gallery.activityPointEvent.videoLink"><![CDATA[Video Bağlantıları]]></item>
 		<item name="wcf.user.boxList.description.galleryImages"><![CDATA[{#$boxUser->galleryImages} Resim{if $boxUser->galleryImages != 1}s{/if}]]></item>
 		<item name="wcf.user.boxList.description.galleryVideos"><![CDATA[{#$boxUser->galleryVideos} Video{if $boxUser->galleryVideos != 1}s{/if}]]></item>
-		<item name="wcf.user.sortField.galleryImages"><![CDATA[Resimler]]></item>
-		<item name="wcf.user.sortField.galleryVideos"><![CDATA[Videolar]]></item>
 	</category>
 	<category name="wcf.user.condition">
 		<item name="wcf.user.condition.galleryImages"><![CDATA[Resimler]]></item>
